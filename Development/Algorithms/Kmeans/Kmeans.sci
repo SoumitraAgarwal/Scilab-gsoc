@@ -1,4 +1,4 @@
-// Macro for logistic regression -- Scilab 
+// Macro for Kmeans -- Scilab 
 
 function dist = getDistance(point1, point2)
 
