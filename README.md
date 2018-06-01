@@ -16,6 +16,8 @@ Standalone Scilab Machine Learning Toolbox. Sub directories
 - Polynomial regression
 - Logistic regression
 - Kmeans clustering
+- Naive Bayes
+- Decision Tree
 
 ### Experimentation
 
