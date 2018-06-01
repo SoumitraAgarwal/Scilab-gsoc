@@ -16,4 +16,4 @@ y		= y(non_nan)
 degree = 3;
 
 cf = PolynomialRegressionTrain(x, y, degree)
-pred = PolynomialRegressionPredictPlot(x,cf)
+pred = PolynomialRegressionPredict(x,cf)

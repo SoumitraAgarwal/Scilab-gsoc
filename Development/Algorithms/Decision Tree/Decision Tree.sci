@@ -1,5 +1,7 @@
 // Macro for Naive Bayes -- Scilab 
 
+
+// Function to get the gini impurity of a vector
 function gini = giniImpurity(rows)
 	counts 	= tabul(rows);
 	entries = length(rows(:, 1))
@@ -10,10 +12,14 @@ function gini = giniImpurity(rows)
 	end
 endfunction
 
-function uncertainity = infoGain(left, right, current_uncertainity)
+// Function to get the information gain via some split on a feature set
+function uncertainity = a(left, right, current_uncertainity)
 	uncertainity = current_uncertainity - (length(left(:, 1))*giniImpurity(left) + length(right(:, 1))*giniImpurity(right))/(length(left(:, 1)) + length(right(:, 1)))
 endfunction
 
+
+// Function to return the best set of questions for a dataset with the leaf node
+// having models represented by flag
 function [questions, flag] = decisionTreeFit(x, y)
 
 	features 	= length(x(1, :))
@@ -28,6 +34,10 @@ function [questions, flag] = decisionTreeFit(x, y)
 	bestrightsub = []
 	for i = 1:features
 		sorted_vals = gsort(x(:, i))
+
+		// Grid search through possible splits/questions to find 
+		// the one with the maximum information gain
+
 		for j = 2:entries - 1
 			leftsubm 	= mainmat(find(mainmat(:, i)) > sorted_vals(j), :);
 			rightsubm	= mainmat(find(mainmat(:, i)) <= sorted_vals(j), :);
@@ -46,6 +56,8 @@ function [questions, flag] = decisionTreeFit(x, y)
 		end
 	end
 
+	// Store the set of questions in a tree form with 
+	// leaf node flags representing models
 	if(bestgain > 0)
 		[leftquest, leftflag] = decisionTreeFit(bestleftsub(:, 1:features), bestleftsub(:, features + 1));
 		[rightquest, rightflag] = decisionTreeFit(bestrightsub(:, 1:features), bestrightsub(:, features + 1));
@@ -84,7 +96,7 @@ function [questions, flag] = decisionTreeFit(x, y)
 	end
 endfunction
 
-
+// Function to predict using the questions, flag setup created using training
 function pred = decisionTreePredict(x, questions, flag)
 	n = length(x(:, 1));
 	pred = [];

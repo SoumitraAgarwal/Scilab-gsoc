@@ -1,5 +1,6 @@
 // Macro for Kmeans -- Scilab 
 
+// Subroutine to get distance between two points
 function dist = getDistance(point1, point2)
 
 	n1 = length(point1)
@@ -11,12 +12,15 @@ function dist = getDistance(point1, point2)
 
 endfunction
 
+// Function to return flags for category of each data point
 function flags = kmeansCluster(x, centres)
 	
 	n 		= length(x(:,1));
 	index 	= round(n.*rand(1,centres));
 	points  = [];
 	flags 	= [];
+
+	// Get a set of random centres
 	for i = 1:centres
 		
 		points	= [points; x(index(i), :)];
@@ -27,6 +31,8 @@ function flags = kmeansCluster(x, centres)
 
 		mindistance = -1;
 		minindex	= -1;
+
+		// Find the closest centre to the data point
 
 		for j = 1:centres
 			if(minindex == -1)
@@ -40,6 +46,7 @@ function flags = kmeansCluster(x, centres)
 			end
 		end
 
+		// Update the centre with the new data point
 		flags = [flags, minindex];
 		points(minindex, :) = (i.*points(minindex, :) + x(i, :))./(i + 1);
 	end

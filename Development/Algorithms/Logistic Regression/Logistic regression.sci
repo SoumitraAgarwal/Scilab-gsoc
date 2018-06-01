@@ -1,5 +1,7 @@
 // Macro for logistic regression -- Scilab 
 
+// Function to train a logistic regression model with given 
+// rate and iterations to converge
 function theta = logisticRegressionTrain(x, y, rate, iter)
 	
 	// Making an initial guess
@@ -16,6 +18,8 @@ function theta = logisticRegressionTrain(x, y, rate, iter)
 
 endfunction
 
+
+// Function to predict the target given features and model parameter theta
 function ypred = logisticRegressionPredict(x, theta)
 	ypred = 1.0./(1.0 + exp(-x*theta'));
 endfunction

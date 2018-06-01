@@ -1,5 +1,6 @@
 // Macro for Naive Bayes -- Scilab 
 
+// Function to return a matrix of prior probabilities
 function probMat = naiveBayes(x, y)
 	freq = tabul(y);
 	entries = length(x(:, 1));
@@ -7,6 +8,8 @@ function probMat = naiveBayes(x, y)
 	probMat(:, 2) = probMat(:, 2)/entries;
 endfunction
 
+// Function returns the predicted probability given the train and test
+// matrices with the priors
 function pred = naiveBayesGaussian(x, y, probMat, xtest)
 	features= length(x(1, :));
 	classes = length(probMat(:, 1));
@@ -19,7 +22,6 @@ function pred = naiveBayesGaussian(x, y, probMat, xtest)
 			subm = mainmat(find(mainmat(:, features + 1) == probMat(i, 1)), :);
 			likelihood = probMat(i, 2);
 			for j = 1:features
-				//disp(j)
 				meanf 		= mean(subm(:, j));
 				varf 		= variance(subm(:, j));
 				likelihood 	= likelihood*exp(-((xtest(k, j)- meanf)^2)/(2*varf))/sqrt(2*%pi*varf);

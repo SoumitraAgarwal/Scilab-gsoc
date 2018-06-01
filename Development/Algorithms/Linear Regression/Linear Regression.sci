@@ -1,5 +1,6 @@
 // Macro script for linear regression -- Scilab 
 
+// Function to get coefficients for a line fit to features x given target y
 function [a,b] = linearRegressionTrain(x,y)
 	
 	// Extracting the least square mean of that function and displaying
@@ -7,7 +8,7 @@ function [a,b] = linearRegressionTrain(x,y)
 
 endfunction
 
-
+// Function to predict the target for some feature set x and coefficients [a,b]
 function pred = linearRegressionPredict(x, a, b)
 
 	pred = a*x + b;
