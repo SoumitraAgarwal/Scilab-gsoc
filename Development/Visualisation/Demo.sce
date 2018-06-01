@@ -1,14 +1,30 @@
-// Demo for logistic regression -- Scilab 
+// Demo for visualisation -- Scilab 
+
+clear();
 
 getd('.')
+getd('../Algorithms/Kmeans')
 
 // Data preparation
 M = csvRead('train.csv')
-x = M(:,[2, 3, 4 ,5 ,6]);
-y = M(:, 9);
+x = M(:, [6, 10]);
 
-y(or(isnan(x),'c'),:) = []
+// Data cleaning
+function xnorm = norma(x)
+	n 	= length(x)
+	mi  = min(x)
+	ma  = max(x)
+	for i=1:n
+		x(i) = 1.0*(x(i) - mi)/(ma - mi)
+	end
+
+	xnorm = x
+endfunction
+
 x(or(isnan(x),'c'),:) = []
-[questions,flag] 	= decisionTreeFit(x, y);
-pred				= decisionTreePredict(x, questions, flag);
-disp(0.5*norm(pred' - y))
+
+x(:, 2) = norma(real(x(:, 2)))
+x(:, 1) = norma(real(x(:, 1)))
+
+flags = kmeansCluster(x, 2);
+plot = visualizeSplit(x(:, 2), x(:, 1), flags)
