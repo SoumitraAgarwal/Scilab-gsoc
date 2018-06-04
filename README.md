@@ -25,7 +25,7 @@ This directory contains macros for machine learning algorithms with their usage
 * Polynomial regression
   * PolynomialRegressionTrain(x, y, degree) : Parameters x (feature matrix), y (target vector) and degree of the curve to be fit to return model coefficient cf.
 
-  *PolynomialRegressionPredict(x, cf) : Parameters x (test feature matrix) and cf from PolynomialRegressionTrain() to get predicted vector.
+  * PolynomialRegressionPredict(x, cf) : Parameters x (test feature matrix) and cf from PolynomialRegressionTrain() to get predicted vector.
 
 * Logistic regression
   * logisticRegressionTrain(x, y, rate, iter) : Parameters x (feature matrix), y (target vector), rate of learning and number of iterations to return model parameter theta
