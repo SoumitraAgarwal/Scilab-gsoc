@@ -65,7 +65,7 @@ This directory contains scripts for plotting different models. The usage can be 
 Jupyter integration for python libraries availability within Scilab. The flow is explained as (from the scripts in Automated) :
 
 * Script <algorithm.sci> is called from a directory on the local server. This script calls python_local.py.
-* Script <python_local.py> clears all already running jupyter kernels and starts a new kernel in a nohup fashion, thus appending the output to nohup.out. After the kernel starts, the script copies the dataset and python script to the server to directory /home/<username>
+* Script <python_local.py> clears all already running jupyter kernels and starts a new kernel in a nohup fashion, thus appending the output to nohup.out. After the kernel starts, the script copies the dataset and python script to the server to directory /home/username/Shared/
 * Then the script runs the <python_server.py> with the parameters of the running kernel obtained from <python_local.py>. 
 * The script <python_server.py> then starts a connection to the kernel and runs the training script with the results stored in <attributes.p>
 * Then our process returns back to <python_local.py> which then copies back the <attributes.p> pickle file in protocol 2. 
