@@ -1,4 +1,4 @@
-// Macro for train test split of dataset -- Scilab 
+// Macro for Normalization split of dataset -- Scilab 
 
 function xnorm = normalize(x)
 	n 	= length(x)
