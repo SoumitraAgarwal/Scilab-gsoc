@@ -1,0 +1,11 @@
+// Demo script for Binarization
+
+getd('.')
+
+// Data preparation
+M = csvRead('train.csv')
+x = M(:, [2,3,6,7,8,10]);
+x(or(isnan(x),'c'),:) = []
+x = real(x);
+pca = PCA(x);
+disp(pca)
