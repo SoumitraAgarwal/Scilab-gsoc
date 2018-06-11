@@ -1,4 +1,4 @@
-// Demo script for Binarization
+// Demo script for PCA
 
 getd('.')
 
