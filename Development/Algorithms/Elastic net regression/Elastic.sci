@@ -18,7 +18,7 @@ function theta = elasticRegressionTrain(x, y, rate, iter, lambda1, lambda2)
 				xtemp = xtemp(:, 2:features)
 				thetaTemp = thetaTemp(2:features)
 			else
-				xtemp = [xtemp(1:j-1), x(j + 1:features)];
+				xtemp = [xtemp(:, 1:j-1), x(:, j + 1:features)];
 				thetaTemp = [thetaTemp(1:j-1), thetaTemp(j + 1:features)];
 			end
 
