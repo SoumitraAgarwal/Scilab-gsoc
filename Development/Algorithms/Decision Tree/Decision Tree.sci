@@ -13,7 +13,7 @@ function gini = giniImpurity(rows)
 endfunction
 
 // Function to get the information gain via some split on a feature set
-function uncertainity = a(left, right, current_uncertainity)
+function uncertainity = infoGain(left, right, current_uncertainity)
 	uncertainity = current_uncertainity - (length(left(:, 1))*giniImpurity(left) + length(right(:, 1))*giniImpurity(right))/(length(left(:, 1)) + length(right(:, 1)))
 endfunction
 
