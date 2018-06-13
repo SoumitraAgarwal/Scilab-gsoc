@@ -1,4 +1,4 @@
-// Demo for logistic regression -- Scilab 
+// Demo for Naive Bayes -- Scilab 
 
 getd('.')
 
