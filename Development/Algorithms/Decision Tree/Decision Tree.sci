@@ -1,4 +1,4 @@
-// Macro for Naive Bayes -- Scilab 
+// Macro for Decision Tree -- Scilab 
 
 
 // Function to get the gini impurity of a vector
