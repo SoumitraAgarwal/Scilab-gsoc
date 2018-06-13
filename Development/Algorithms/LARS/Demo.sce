@@ -28,5 +28,4 @@ x(:, 1) = norma(x(:, 1))
 
 theta = LARSRegressionTrain(x, y, iter, rate)
 pred = LARSRegressionPredictPlot(x,y,theta)
-disp(theta)
-disp(0.5*norm(y - pred))
+disp(0.5*sqrt(norm(y - pred)))
