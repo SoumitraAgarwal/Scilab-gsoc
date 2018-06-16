@@ -23,5 +23,6 @@ x(or(isnan(x),'c'),:) = []
 x(:, 2) = norma(real(x(:, 2)))
 x(:, 1) = norma(real(x(:, 1)))
 
-flags = affinityCluster(x, 2);
+flags = affinityCluster(x, 4, 4);
+disp(flags)
 scatter(x(:, 2), x(:, 1),  1, flags, 'x')
