@@ -1,8 +1,8 @@
-// Macro for supportVector regression -- Scilab 
+// Macro for supportVector classification -- Scilab 
 
-// Function to train a supportVector regression model with given 
+// Function to train a supportVector classification model with given 
 // rate and iterations to converge
-function [theta,b] = supportVectorRegressionTrain(x, y, rate, iter, lambda, alpha)
+function [theta,b] = supportVectorclassificationTrain(x, y, rate, iter, lambda, alpha)
 	
 	// Making an initial guess
 	features = length(x(1, :))
@@ -46,7 +46,7 @@ endfunction
 
 
 // Function to predict the target given features and model parameter theta
-function ypred = supportVectorRegressionPredict(x, theta, b)
+function ypred = supportVectorclassificationPredict(x, theta, b)
 	temp = x*theta' - b;
 	n = length(temp)
 	ypred = []

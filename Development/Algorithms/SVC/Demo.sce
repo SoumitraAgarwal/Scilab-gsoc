@@ -1,4 +1,4 @@
-// Demo for supportVector regression -- Scilab 
+// Demo for supportVector classification -- Scilab 
 
 getd('.')
 
@@ -30,8 +30,8 @@ rate = 0.02
 lambda = 1
 alpha = 0.0000002
 
-[theta, b] = supportVectorRegressionTrain(x, y, rate, iter, lambda, alpha)
-ypred = supportVectorRegressionPredict(x, theta, b)
+[theta, b] = supportVectorclassificationTrain(x, y, rate, iter, lambda, alpha)
+ypred = supportVectorclassificationPredict(x, theta, b)
 disp(tabul(y))
 disp(tabul(ypred))
 disp(tabul(y - ypred))
