@@ -82,7 +82,7 @@ function flag = regressionTreeFit(nodeNumber, x, y, entryThreshold, workdir)
 			for i = 1:p
 				mputl(string(a(i)),fd);
 			end
-			mputl(sting(b), fd);
+			mputl(string(b), fd);
 			mclose(fd)
 		end
 	end
