@@ -10,7 +10,6 @@ y = M(:, 2);
 // Data cleaning
 function xnorm = norma(x)
 	n 	= length(x)
-	disp(x)
 	mi  = min(x)
 	ma  = max(x)
 	for i=1:n
@@ -24,8 +23,12 @@ y(or(isnan(x),'c'),:) = []
 x(or(isnan(x),'c'),:) = []
 
 
-iter = 40
-rate = 0.000002
+x(:, 1) = norma(real(x(:, 1)))
+x(:, 2) = norma(real(x(:, 2)))
 
-theta = neuralNetworkTrain(x, y, rate, iter)
-ypred = neuralNetworkPredict(x, theta)
+iter = 100
+rate = 0.0002
+
+theta = neuralNetworkTrain(x, y, [5,3,5], 50, iter, rate)
+ypred = neuralNetworkPredict(x, theta, [3,3])
+disp(0.5*sqrt(norm(ypred' - y)))
