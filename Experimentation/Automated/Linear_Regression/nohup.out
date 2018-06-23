@@ -150,3 +150,5 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 To connect another client to this kernel, use:
     --existing kernel-8566.json
+Write failed: Broken pipe
+Write failed: Broken pipe
