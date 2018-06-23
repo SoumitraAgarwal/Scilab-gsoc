@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = csvRead('train.csv')
+M = csvRead('Datasets/weather.csv')
 x = M(:, 1);
 y = M(:, 9);
 

@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = csvRead('Datasets/train.csv')
+M = csvRead('Datasets/titanic.csv')
 x = M(1:100, [6, 10]);
 
 // Data cleaning

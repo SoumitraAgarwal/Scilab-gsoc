@@ -5,7 +5,7 @@ getd('../Naive Bayes Multinomial')
 getd('.')
 
 // Data preparation for gaussian
-M = csvRead('train.csv')
+M = csvRead('Datasets/weather.csv')
 x = M(:, [1,2,3,4,5,6,7,8]);
 y = M(:, 9);
 

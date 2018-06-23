@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = csvRead('Datasets/forestfires.csv')
+M = csvRead('forestfires.csv')
 x = M(:, [5,6]);
 y = M(:, 2);
 

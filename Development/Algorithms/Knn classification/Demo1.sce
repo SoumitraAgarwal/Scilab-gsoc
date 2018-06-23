@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = csvRead('Datasets/train.csv')
+M = csvRead('Datasets/titanic.csv')
 x = M(:, [6, 7, 8, 10]);
 y = M(:, 2);
 

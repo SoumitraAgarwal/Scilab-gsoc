@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = csvRead('train.csv')
+M = csvRead('Datasets/titanic.csv')
 x = M(:, 10);
 x(or(isnan(x),'c'),:) = []
 x = real(x);

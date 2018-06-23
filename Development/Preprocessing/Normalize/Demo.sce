@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = csvRead('train.csv')
+M = csvRead('Datasets/titanic.csv')
 x = M(:, [6, 10]);
 x = real(x);
 normx = normalize(x);

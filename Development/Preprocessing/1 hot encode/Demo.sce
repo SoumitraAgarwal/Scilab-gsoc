@@ -3,7 +3,7 @@
 getd('.')
 
 // Data preparation
-M = read_csv('train.csv')
+M = read_csv('Datasets/titanic.csv')
 x = M(:, 12);
 x(or(isnan(x),'c'),:) = []
 [categories, encode] = hotEncode(x);
