@@ -1,7 +1,5 @@
 // Demo for Kmediods -- Scilab 
 
-
-
 // Data preparation
 M = csvRead('Datasets/titanic.csv')
 x = M(1:200, [6, 10]);

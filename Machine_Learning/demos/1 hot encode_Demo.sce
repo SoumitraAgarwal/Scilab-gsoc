@@ -5,6 +5,7 @@ M = read_csv('Datasets/titanic.csv')
 x = M(:, 12);
 x = stripblanks(x)
 x(or(isnan(x),'c'),:) = []
+l = size(x)
 y = []
 for i = 1:l(1)
 	if(strcmp(x(i), '') ~= 0)

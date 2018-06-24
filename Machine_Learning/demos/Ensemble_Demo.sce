@@ -1,11 +1,7 @@
 // Demo for Ensemble classifier -- Scilab 
 
-getd('../Naive Bayes')
-getd('../Naive Bayes Multinomial')
-
-
 // Data preparation for gaussian
-M = csvRead('Datasets/weather.csv')
+M = csvRead('Datasets/standard.csv')
 x = M(:, [1,2,3,4,5,6,7,8]);
 y = M(:, 9);
 

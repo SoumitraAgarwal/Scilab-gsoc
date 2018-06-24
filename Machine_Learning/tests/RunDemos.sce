@@ -1,11 +1,13 @@
 getd('../macros')
 scripts = dir('../demos')
-numfiles = length(scripts)
+numfiles = size(scripts.name)(1)
 disp(scripts)
-for i = 3:numfiles
+for i = 1:numfiles
 	script = scripts.name(i);
-	disp('Running ' + script)
-	if(strcmp('Datasets/', script) ~= 0)
+	disp('Running ' + string(i) + ' of ' + string(numfiles) + ' : ' + script)
+	if(strcmp('Datasets', script) ~= 0)
 		exec('../demos/' + script, -1)
 	end
+
+	disp('Complete')
 end

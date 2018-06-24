@@ -1,9 +1,7 @@
 // Demo for multinomial naive bayes regression -- Scilab 
 
-
-
 // Data preparation
-M = csvRead('Datasets/weather.csv')
+M = csvRead('Datasets/standard.csv')
 x = M(:, 1);
 y = M(:, 9);
 

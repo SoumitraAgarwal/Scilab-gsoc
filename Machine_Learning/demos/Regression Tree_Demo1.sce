@@ -3,7 +3,7 @@
 
 
 // Data preparation
-M = csvRead('Datasets/titanic.csv')
+M = csvRead('Datasets/standard.csv')
 x = M(:,[1 ,2, 3, 4, 5]);
 y = M(:, 6);
 

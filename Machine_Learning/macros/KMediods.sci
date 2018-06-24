@@ -16,7 +16,7 @@ endfunction
 function flags = KmediodsCluster(x, centres)
 	
 	n 		= length(x(:,1));
-	index 	= round(n.*rand(1,centres)*rand(1)/rand(1));
+	index 	= round(1 + (n - 1).*rand(1,centres));
 	points  = [];
 	flags 	= [];
 
