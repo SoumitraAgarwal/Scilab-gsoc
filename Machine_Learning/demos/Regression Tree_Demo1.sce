@@ -1,6 +1,6 @@
 // Demo for regression tree -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

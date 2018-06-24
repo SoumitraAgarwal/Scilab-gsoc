@@ -1,6 +1,6 @@
 // Demo script for scaling to unit variance and zero mean
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

@@ -1,6 +1,6 @@
 // Demo for Kmediods -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('forestfires.csv')

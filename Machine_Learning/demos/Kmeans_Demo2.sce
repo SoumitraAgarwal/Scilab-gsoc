@@ -1,6 +1,6 @@
 // Demo for Kmeans -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('forestfires.csv')

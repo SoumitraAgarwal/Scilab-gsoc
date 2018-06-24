@@ -1,6 +1,6 @@
 // Demo for polynomial regression -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/weather.csv')

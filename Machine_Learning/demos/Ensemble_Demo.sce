@@ -2,7 +2,7 @@
 
 getd('../Naive Bayes')
 getd('../Naive Bayes Multinomial')
-getd('.')
+
 
 // Data preparation for gaussian
 M = csvRead('Datasets/weather.csv')

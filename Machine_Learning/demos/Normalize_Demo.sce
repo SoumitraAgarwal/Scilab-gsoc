@@ -1,6 +1,6 @@
 // Demo script for normalization
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

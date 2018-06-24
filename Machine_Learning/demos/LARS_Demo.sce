@@ -1,6 +1,6 @@
 // Demo script for LARS regression
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/weather.csv')

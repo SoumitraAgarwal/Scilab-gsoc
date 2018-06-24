@@ -1,6 +1,6 @@
 // Demo for neural network -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

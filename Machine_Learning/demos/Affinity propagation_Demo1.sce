@@ -1,6 +1,6 @@
 // Demo for affinity -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

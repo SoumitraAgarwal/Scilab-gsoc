@@ -1,6 +1,6 @@
 // Demo script for train test split
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/weather.csv')

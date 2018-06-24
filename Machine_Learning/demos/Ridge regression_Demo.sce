@@ -1,6 +1,6 @@
 // Demo for ridge regression -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

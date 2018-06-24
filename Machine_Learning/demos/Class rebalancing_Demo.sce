@@ -1,6 +1,6 @@
 // Demo script for median
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

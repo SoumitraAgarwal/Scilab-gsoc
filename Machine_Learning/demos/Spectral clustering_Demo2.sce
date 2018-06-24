@@ -1,6 +1,6 @@
 // Demo for spectral -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('forestfires.csv')

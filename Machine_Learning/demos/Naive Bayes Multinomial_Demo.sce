@@ -1,6 +1,6 @@
 // Demo for multinomial naive bayes regression -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/weather.csv')

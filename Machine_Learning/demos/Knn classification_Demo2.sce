@@ -1,6 +1,6 @@
 // Demo for K Nearest neighbours classification  -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('forestfires.csv')

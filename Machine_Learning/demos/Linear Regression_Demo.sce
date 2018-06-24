@@ -1,6 +1,6 @@
 // Demo script for linear regression
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/weather.csv')

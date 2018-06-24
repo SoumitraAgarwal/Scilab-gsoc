@@ -1,6 +1,6 @@
 // Demo for Naive Bayes -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/weather.csv')

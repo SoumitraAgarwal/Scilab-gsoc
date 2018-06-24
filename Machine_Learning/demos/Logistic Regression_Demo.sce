@@ -1,6 +1,6 @@
 // Demo for logistic regression -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

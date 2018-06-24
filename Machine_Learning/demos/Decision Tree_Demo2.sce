@@ -1,6 +1,6 @@
 // Demo for decision tree -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('forestfires.csv')

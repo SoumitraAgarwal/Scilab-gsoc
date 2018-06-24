@@ -1,9 +1,7 @@
 // Demo for affinity -- Scilab 
 
-getd('.')
-
 // Data preparation
-M = csvRead('forestfires.csv')
+M = csvRead('Datasets/forestfires.csv')
 x = M(1:100, [6, 8]);
 
 // Data cleaning

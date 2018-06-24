@@ -1,6 +1,6 @@
 // Demo for lasso regression -- Scilab 
 
-getd('.')
+
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')
