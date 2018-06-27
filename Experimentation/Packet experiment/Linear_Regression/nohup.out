@@ -1724,3 +1724,32 @@ Traceback (most recent call last):
   File "/home/soumitra/anaconda3/lib/python3.5/socket.py", line 49, in <module>
     import _socket
 ImportError: /home/soumitra/anaconda3/lib/python3.5/lib-dynload/_socket.cpython-35m-x86_64-linux-gnu.so: failed to map segment from shared object
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
+Write failed: Broken pipe
