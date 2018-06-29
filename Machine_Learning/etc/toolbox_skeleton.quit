@@ -8,28 +8,6 @@ function quitModule()
     etc_tlbx  = getshortpathname(etc_tlbx);
     root_tlbx = strncpy( etc_tlbx, length(etc_tlbx)-length("\etc\") );
 
-    //unlink libraries
-    [bOK, ilib] = c_link('skeleton_cpp');
-    if bOK then
-        ulink(ilib);
-    end
-
-    [bOK, ilib] = c_link('skeleton_c');
-    if bOK then
-        ulink(ilib);
-    end
-
-    [bOK, ilib] = c_link('skeleton_fortran');
-    if bOK then
-        ulink(ilib);
-    end
-
-    // Remove Preferences GUI
-    // =============================================================================
-    if getscilabmode() == "STD" then
-    removeModulePreferences(root_tlbx);
-    end
-
 endfunction
 
 
