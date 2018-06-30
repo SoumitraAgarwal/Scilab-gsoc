@@ -22,3 +22,20 @@ function status = machineLearn(modelName, data)
 		disp('No such model. Please check model name.')
 		status = 0
 	end
+endfunction
+
+function status = machineLearnURL(modelName, url, preprocessing)
+
+	if(strcmp(modelName, 'linear_regression') == 0)
+		txt 		= mgetl('../python_local_url.py')
+		main 		= pyMain()
+		main.script	= modelName
+		main.url 	= url
+		main.prep 	= preprocessing
+		pyEvalStr(txt)
+		status = 1
+	else
+		disp('No such model. Please check model name.')
+		status = 0
+	end
+endfunction

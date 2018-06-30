@@ -1,5 +1,6 @@
 import os
 import matplotlib.pyplot as plt
+import numpy as np
 
 file 	= open('Linear_Regression/TimeMatrix', 'r')
 mat 	= file.readlines()
@@ -17,3 +18,6 @@ for row in time:
 
 plt.legend()
 plt.show()
+
+means = [np.mean(row) for row in time]
+print(means)
