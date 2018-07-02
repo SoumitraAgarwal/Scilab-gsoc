@@ -1,7 +1,5 @@
 // Demo for affinity -- Scilab 
 
-
-
 // Data preparation
 M = csvRead('Datasets/titanic.csv')
 x = M(1:100, [6, 10]);

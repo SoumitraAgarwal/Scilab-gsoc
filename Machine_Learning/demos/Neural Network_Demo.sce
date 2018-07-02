@@ -30,5 +30,5 @@ iter = 100
 rate = 0.0002
 
 theta = neuralNetworkTrain(x, y, [5,3,5], 50, iter, rate)
-ypred = neuralNetworkPredict(x, theta, [3,3])
+ypred = neuralNetworkPredict(x, theta, [5,3,5])
 disp(0.5*sqrt(norm(ypred' - y)))

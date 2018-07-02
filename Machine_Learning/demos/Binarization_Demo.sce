@@ -1,7 +1,5 @@
 // Demo script for Binarization
 
-
-
 // Data preparation
 M = csvRead('Datasets/titanic.csv')
 x = M(:, 10);

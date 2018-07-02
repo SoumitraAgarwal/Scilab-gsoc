@@ -1,7 +1,5 @@
 // Demo script for median
 
-
-
 // Data preparation
 M = csvRead('Datasets/titanic.csv')
 x = M(:, [6, 8]);
