@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<scilablib name="toolbox_skeletonlib">
-  <macro name="PCA" file="PCA.bin" md5="9adbe17dca7117b7c2b16a21cdccdb38"/>
-</scilablib>

@@ -24,4 +24,4 @@ ScilabVersion 	: >= 6.0
 
 Date 		: 2018-06-24
 
-Description : This toolbox tries to bring all machine learning features in one place for Scilab. This does not have any dependencies and thus is named the 'Standalone Machine Learning Toolbox'. To use the toolbox one needs to call the dependent function from the macro. Each macro is named as the algorithm/preprocessing it covers. The usage can be understood from demos which are titled (<algorithm>_Demo(<number>).sce)
+Description : This toolbox tries to bring all machine learning features in one place for Scilab. This does not have any dependencies and thus is named the 'Standalone Machine Learning Toolbox'. To use the toolbox one needs to call the dependent function from the macro. Each macro is named as the algorithm/preprocessing it covers. The usage can be understood from demos which are titled (<algorithm>_Demo(<number>).sce). Please refer to readme.txt for usage
