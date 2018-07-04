@@ -68,11 +68,10 @@ endfunction
 
 function status = machineLearnCustom(script, data, username, ip, password)
 
-	fprintfMat('dataMat', data)
 	txt 		= mgetl('../python_local_custom.py')
 	main 		= pyMain()
 	main.script	= script
-	main.data 	= 'dataMat'
+	main.data 	= data
 	main.user 	= username
 	main.passw 	= password
 	main.ip 	= ip

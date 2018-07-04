@@ -16,7 +16,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-19722.json
+    --existing kernel-25658.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -35,7 +35,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-19823.json
+    --existing kernel-25779.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -54,7 +54,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-19945.json
+    --existing kernel-25884.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -73,7 +73,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-20020.json
+    --existing kernel-26028.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -92,7 +92,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-20093.json
+    --existing kernel-26164.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -111,7 +111,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-20169.json
+    --existing kernel-26407.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -130,7 +130,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-20249.json
+    --existing kernel-26498.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -149,7 +149,7 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-20329.json
+    --existing kernel-26605.json
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
 
@@ -168,253 +168,4 @@ To read more about this, see https://github.com/ipython/ipython/issues/2049
 
 
 To connect another client to this kernel, use:
-    --existing kernel-20409.json
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-5804.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-5845.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-5904.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-5949.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-5988.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6086.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6132.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6166.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6203.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6310.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6423.json
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-Linux instance-1 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-NOTE: When using the `ipython kernel` entry point, Ctrl-C will not work.
-
-To exit, you will have to explicitly quit this process, by either sending
-"quit" from a client, or using Ctrl-\ in UNIX-like environments.
-
-To read more about this, see https://github.com/ipython/ipython/issues/2049
-
-
-To connect another client to this kernel, use:
-    --existing kernel-6596.json
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
-Write failed: Broken pipe
+    --existing kernel-26729.json

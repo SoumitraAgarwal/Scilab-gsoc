@@ -12,10 +12,15 @@ status = os.popen('echo $(ssh -i ~/.ssh/id_rsa ' + user + '@' + ip + ' cat passw
 status = status[-1].rstrip("\r\n")
 
 if(status == passw):
-	os.system('scp -i ~/.ssh/id_rsa dataMat ' + user + '@' + ip + ':~/Working/data')
+	os.system('scp -i ~/.ssh/id_rsa ' + data + ' ' + user + '@' + ip + ':~/Working/data')
 	os.system('scp -i ~/.ssh/id_rsa ' + script + '.py ' +  user + '@' + ip + ':~/Scripts/' + script + '.py')
 	# Copy the kernel file
 	# # Get the list of kernel files
+	f 	= open("../copy_commands.sh","w+")
+	f.write('export PATH="/home/' + user + '/anaconda3/bin:$PATH"\nrm attributes.p\ncd $(jupyter --runtime-dir)\nls')
+	f.close()
+	
+
 	files 	= os.popen('cat ../copy_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip).readlines()
 	# print('Copying ' + files[-1])
 
