@@ -1,0 +1,27 @@
+// DESCRIPTION File for standalone MACHINE_LEARNING toolbox
+
+Toolbox 	: MACHINE_LEARNING
+
+Title 		: Standalone machine learning toolbox for Scilab
+
+Summary 	: Machine learning features in Scilab are haphazardly placed and this toolbox aims to bring all major features together in one place. This toolbox includes algorithmic as well as pre-processing tools required to solce learning/optimisation problems. This toolbox was initiated as part of Google Summer of Code 2018
+
+Version 	: 0.1.0
+
+Author 		: Soumitra Agarwal
+
+Maintainer 	: Soumitra Agarwal <agarwalsoumitra@gmail.com>
+
+Category 	: Data Analysis - Statistics, Data Handling, Optimization, Signal Processing
+
+Entity 		: Google Summer of Code 2018
+
+WebSite 	: https://wiki.scilab.org/agarwalsoumitra1504%40gmail.com/soumitra%20wiki
+
+License 	: BSD - 4
+
+ScilabVersion 	: >= 6.0
+
+Date 		: 2018-06-24
+
+Description : This toolbox tries to bring all machine learning features in one place for Scilab. This does not have any dependencies and thus is named the 'Standalone Machine Learning Toolbox'. To use the toolbox one needs to call the dependent function from the macro. Each macro is named as the algorithm/preprocessing it covers. The usage can be understood from demos which are titled (<algorithm>_Demo(<number>).sce). Please refer to readme.txt for usage
