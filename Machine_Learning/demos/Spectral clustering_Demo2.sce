@@ -1,5 +1,6 @@
 // Demo for spectral -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

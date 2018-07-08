@@ -1,5 +1,6 @@
 // Demo script for PCA
 
+getd('../macros')
 
 
 // Data preparation

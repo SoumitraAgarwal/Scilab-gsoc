@@ -1,5 +1,7 @@
 // Demo for multinomial naive bayes regression -- Scilab 
 
+getd('../macros')
+
 // Data preparation
 M = csvRead('Datasets/standard.csv')
 x = M(:, 1);

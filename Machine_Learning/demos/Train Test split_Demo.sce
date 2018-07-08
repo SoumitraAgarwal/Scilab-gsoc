@@ -1,5 +1,6 @@
 // Demo script for train test split
 
+getd('../macros')
 
 
 // Data preparation

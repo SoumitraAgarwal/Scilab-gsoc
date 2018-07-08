@@ -1,5 +1,6 @@
 // Demo script for LARS regression
 
+getd('../macros')
 
 
 // Data preparation

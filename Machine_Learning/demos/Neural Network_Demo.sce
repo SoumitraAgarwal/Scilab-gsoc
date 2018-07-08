@@ -1,5 +1,6 @@
 // Demo for neural network -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

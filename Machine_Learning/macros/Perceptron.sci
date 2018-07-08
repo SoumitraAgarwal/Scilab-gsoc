@@ -13,7 +13,6 @@ function theta = perceptronTrain(x, y, rate, iter)
 		sigm 	=  x*theta';
 		theta 	= theta + rate.*((y - sigm)'*x);
 		error	= 0.5*norm(y - x*theta');
-		disp(error)
 	end
 
 endfunction

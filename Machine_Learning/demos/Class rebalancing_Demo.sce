@@ -1,5 +1,6 @@
 // Demo script for median
 
+getd('../macros')
 
 
 // Data preparation

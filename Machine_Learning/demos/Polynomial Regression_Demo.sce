@@ -1,5 +1,6 @@
 // Demo for polynomial regression -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

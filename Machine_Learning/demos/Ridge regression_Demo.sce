@@ -1,5 +1,6 @@
 // Demo for ridge regression -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

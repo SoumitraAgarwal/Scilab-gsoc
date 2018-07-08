@@ -32,7 +32,6 @@ function theta = lassoRegressionTrain(x, y, rate, iter, lambda)
 		
 		end
 		error	= 0.5*norm(y - x*theta');
-		disp(error)	
 	end
 
 endfunction

@@ -105,11 +105,6 @@ function workdir = neuralNetworkTrain(x, y, hiddenLayers, batchSize, iterations,
 			weightColumns = length(weightMat(1,:))
 			deltaMat = []
 			for j = 1:weightColumns
-				//disp(k)
-				//disp(j)
-				//disp(nextWeight)
-				//disp(nextDel)
-				//disp(activationMat)
 				delta = (nextWeight(j, :)*nextDel')*activationMat(j)*(1 - activationMat(j))
 				weightMat(:, j) = weightMat(:, j) - rate*delta*prevAct'
 				biasMat(j) = biasMat(j) - rate*delta

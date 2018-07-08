@@ -1,5 +1,6 @@
 // Demo for Random Forest -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

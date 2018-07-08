@@ -1,5 +1,7 @@
 // Demo script for 1 hot encoding
 
+getd('../macros/')
+
 // Data preparation
 M = read_csv('Datasets/titanic.csv')
 x = M(:, 12);
@@ -13,6 +15,7 @@ for i = 1:l(1)
 	end
 end
 x = y
+
 [categories, encode] = hotEncode(x);
 disp(categories);
 disp(encode)

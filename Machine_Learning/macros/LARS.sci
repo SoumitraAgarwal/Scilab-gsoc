@@ -26,7 +26,6 @@ function theta = LARSRegressionTrain(x,y, iter, rate)
 		theta(maxfeature) = theta(maxfeature) + delta;
 		residue = residue - delta*x(:, maxfeature);
 
-		disp(norm(residue))
 	end
 
 endfunction

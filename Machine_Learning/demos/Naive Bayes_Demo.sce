@@ -1,6 +1,6 @@
 // Demo for Naive Bayes -- Scilab 
 
-
+getd('../macros')
 
 // Data preparation
 M = csvRead('Datasets/standard.csv')

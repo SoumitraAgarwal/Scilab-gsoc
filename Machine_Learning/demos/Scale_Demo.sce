@@ -1,5 +1,6 @@
 // Demo script for scaling to unit variance and zero mean
 
+getd('../macros')
 
 
 // Data preparation

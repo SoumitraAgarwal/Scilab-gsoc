@@ -13,7 +13,6 @@ function theta = ridgeRegressionTrain(x, y, rate, iter, lambda)
 		sigm 	=  1.0./(1.0 + exp(-x*theta'))
 		theta 	= theta + rate.*(((y - sigm)'*x) - 2*lambda.*theta);
 		error	= 0.5*norm(y - x*theta');
-		disp(error)
 	end
 
 endfunction

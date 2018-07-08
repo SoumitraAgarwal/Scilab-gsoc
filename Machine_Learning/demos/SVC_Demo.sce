@@ -1,6 +1,6 @@
 // Demo for supportVector classification -- Scilab 
 
-
+getd('../macros')
 
 // Data preparation
 M = csvRead('Datasets/titanic.csv')

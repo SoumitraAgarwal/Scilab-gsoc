@@ -1,5 +1,6 @@
 // Demo for single perceptron -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

@@ -1,5 +1,6 @@
 // Demo script for normalization
 
+getd('../macros')
 
 
 // Data preparation

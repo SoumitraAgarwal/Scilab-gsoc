@@ -1,5 +1,6 @@
 // Demo for regression tree -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

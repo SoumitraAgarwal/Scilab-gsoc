@@ -13,7 +13,6 @@ function theta = logisticRegressionTrain(x, y, rate, iter)
 		sigm 	=  1.0./(1.0 + exp(-x*theta'))
 		theta 	= theta + rate.*((y - sigm)'*x);
 		error	= 0.5*norm(y - x*theta');
-		disp(error)
 	end
 
 endfunction

@@ -1,5 +1,6 @@
 // Demo for Kmeans -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

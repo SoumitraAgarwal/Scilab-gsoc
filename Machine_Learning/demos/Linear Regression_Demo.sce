@@ -1,5 +1,6 @@
 // Demo script for linear regression
 
+getd('../macros')
 
 
 // Data preparation

@@ -1,5 +1,6 @@
 // Demo for K Nearest neighbours classification  -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

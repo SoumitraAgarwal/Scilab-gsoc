@@ -16,7 +16,7 @@ The following section describes the usage of each Macro in the toolbox
 1. hotEncode(x) : 
 
 	- input x is a column vector of strings without blanks
-	- output is a matrix of 0s and 1s with each column as an indicator to a set of values in x
+	- output is [categories, encode] where categories shows the unique elements in x and encode is a matrix of 0s and 1s with each column as an indicator to a set of values in x
 
 ------------------------------------
 

@@ -1,5 +1,6 @@
 // Demo for lasso regression -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

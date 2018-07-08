@@ -1,5 +1,6 @@
 // Demo for elastic regression -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

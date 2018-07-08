@@ -1,5 +1,7 @@
 // Demo script for Binarization
 
+getd('../macros')
+
 // Data preparation
 M = csvRead('Datasets/titanic.csv')
 x = M(:, 10);

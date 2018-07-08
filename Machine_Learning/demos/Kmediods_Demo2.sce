@@ -1,5 +1,7 @@
 // Demo for Kmediods -- Scilab 
 
+getd('../macros')
+
 // Data preparation
 M = csvRead('Datasets/forestfires.csv')
 x = M(:, [6, 8]);

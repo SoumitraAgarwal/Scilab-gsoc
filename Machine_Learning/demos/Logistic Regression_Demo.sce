@@ -1,5 +1,6 @@
 // Demo for logistic regression -- Scilab 
 
+getd('../macros')
 
 
 // Data preparation

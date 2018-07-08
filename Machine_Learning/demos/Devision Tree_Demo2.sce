@@ -1,5 +1,7 @@
 // Demo for decision tree -- Scilab 
 
+getd('../macros')
+
 // Data preparation
 M = csvRead('Datasets/standard.csv')
 x = M(:,[2, 3,4 ,5 ,6]);
