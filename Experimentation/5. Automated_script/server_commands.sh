@@ -3,4 +3,4 @@ ls
 cd Working
 python preprocessing.py
 cd
-python python_server.py kernel-26605.json custom
+python python_server.py kernel-25209.json linear_regression

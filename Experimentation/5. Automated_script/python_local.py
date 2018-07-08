@@ -16,6 +16,10 @@ if(status == passw):
 
 	# Copy the kernel file
 	# # Get the list of kernel files
+
+	f 	= open("../copy_commands.sh","w+")
+	f.write('export PATH="/home/' + user + '/anaconda3/bin:$PATH"\nrm attributes.p\ncd $(jupyter --runtime-dir)\nls')
+	f.close()
 	files 	= os.popen('cat ../copy_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip).readlines()
 	# print('Copying ' + files[-1])
 
