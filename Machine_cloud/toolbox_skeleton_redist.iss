@@ -4,17 +4,17 @@
 ; This file is released under the 3-clause BSD license. See COPYING-BSD.
 ;##############################################################################################################
 ; modify this path where is toolbox_skeleton directory
-#define BinariesSourcePath "../Machine_Learning"
+#define BinariesSourcePath "../Machine_Cloud"
 ;
 #define Toolbox_skeleton_version "0.1.0"
 #define CurrentYear "2018"
-#define Toolbox_skeletonDirFilename "machine_learning"
+#define Toolbox_skeletonDirFilename "machine_cloud"
 ;##############################################################################################################
 [Setup]
 ; Debut Données de base à renseigner suivant version
 SourceDir={#BinariesSourcePath}
-AppName=machine_learning
-AppVerName=machine_learning version 0.1
+AppName=machine_cloud
+AppVerName=machine_cloud version 0.1
 DefaultDirName={pf}\{#Toolbox_skeletonDirFilename}
 InfoAfterfile=readme.txt
 LicenseFile=license.txt
@@ -38,9 +38,7 @@ Source: macros\lib; DestDir: {app}\macros
 Source: macros\names; DestDir: {app}\macros
 Source: macros\*.sci; DestDir: {app}\macros
 Source: macros\*.bin; DestDir: {app}\macros
-Source: tests\*.*; DestDir: {app}\tests; Flags: recursesubdirs
-;Source: includes\*.h; DestDir: {app}\includes; Flags: recursesubdirs
-;Source: locales\*.*; DestDir: {app}\locales; Flags: recursesubdirs
+Source: tests\*.*; DestDir: {app}\tests; Flags: recursesubdirs;
 Source: demos\*.*; DestDir: {app}\locales; Flags: recursesubdirs
 ;
 ;##############################################################################################################

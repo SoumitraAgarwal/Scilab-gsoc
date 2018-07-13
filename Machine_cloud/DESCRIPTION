@@ -1,10 +1,10 @@
 // DESCRIPTION File for standalone MACHINE_LEARNING toolbox
 
-Toolbox 	: MACHINE_LEARNING
+Toolbox 	: MACHINE_CLOUD
 
-Title 		: Standalone machine learning toolbox for Scilab
+Title 		: Easy to use cloud based machine learning interface
 
-Summary 	: Machine learning features in Scilab are haphazardly placed and this toolbox aims to bring all major features together in one place. This toolbox includes algorithmic as well as pre-processing tools required to solce learning/optimisation problems. This toolbox was initiated as part of Google Summer of Code 2018
+Summary 	: This toolbox aims to move the machine learning experience with Scilab to the cloud where you can execute pre-built or custom made scripts written in python on the cloud over desired datasets
 
 Version 	: 0.1.0
 
@@ -20,8 +20,27 @@ WebSite 	: https://wiki.scilab.org/agarwalsoumitra1504%40gmail.com/soumitra%20wi
 
 License 	: BSD - 4
 
-ScilabVersion 	: >= 6.0
+ScilabVersion 	: >= 5.0
 
-Date 		: 2018-06-24
 
-Description : This toolbox tries to bring all machine learning features in one place for Scilab. This does not have any dependencies and thus is named the 'Standalone Machine Learning Toolbox'. To use the toolbox one needs to call the dependent function from the macro. Each macro is named as the algorithm/preprocessing it covers. The usage can be understood from demos which are titled (<algorithm>_Demo(<number>).sce). Please refer to readme.txt for usage
+Depends 	: PIMS 1.1
+
+Date 		: 2018-07-13
+
+Description : This toolbox has a collection off functions that help you register and use pre-written python scripts or your custom machine learning scripts on the cloud. It work after installing some pre-requisite scripts onto your user on the server, adding your key to the metadata for the server and installing the dependencies (PIMS) onto your machine. One can then use the cloud for a machine lerning experience on the fly. The pre-installed scripts are :
+
+decision_tree_classification.py
+decision_tree_regression.py
+heirarchial_clustering.py
+kmeans_clustering.py
+knn_classification.py
+linear_regression.py
+logistic_regression.py
+multiple_linear_regression.py
+naive_bayes_GaussianNB.py
+naive_bayes_MultinomialNB.py
+principal_component_analysis.py
+random_forest_classification.py
+support_vector_regression.py
+
+Each of these scripts has a pre-defined data format that you need to give as input, and a pre-defined output format which is saved as attributes.p onto your local machine.

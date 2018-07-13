@@ -5,8 +5,8 @@
 
 function toolbox_skeletonlib = startModule()
 
-    TOOLBOX_NAME  = "Machine_Learning";
-    TOOLBOX_TITLE = "Machine_Learning";
+    TOOLBOX_NAME  = "Machine_Cloud";
+    TOOLBOX_TITLE = "Machine_Cloud";
 
   mprintf("Start " + TOOLBOX_TITLE + "\n");
 

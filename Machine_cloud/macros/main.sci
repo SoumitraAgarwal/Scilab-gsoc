@@ -8,23 +8,25 @@ pyImport os.path
 os = os.path;
 pyImport time
 
-function status = passwordChange(username, oldpassword, newpassword, ip)
+function status = passwordChange(username, oldpassword, newpassword, ip, toolbox_basedir)
 	main 	= pyMain()
-	txt 	= mgetl('../python_change_pass.py')
+	txt 	= mgetl(toolbox_basedir + 'macros/python_change_pass.py')
 	main.opassword 	= oldpassword
 	main.username 	= username
 	main.npassword 	= newpassword
 	main.ip 		= ip
+	main.base 		= toolbox_dir
 	pyEvalStr(txt)
 	status 	= 1
 endfunction
 
-function status = register(username, password, ip)
+function status = register(username, password, ip, toolbox_basedir)
 	main 	= pyMain()
-	txt 	= mgetl('../python_register.py')
+	txt 	= mgetl(toolbox_basedir + 'macros/python_register.py')
 	main.password 	= password
 	main.user 	 	= username
 	main.ip 		= ip
+	main.base 	= toolbox_dir
 	pyEvalStr(txt)
 	status 	= 1
 endfunction
