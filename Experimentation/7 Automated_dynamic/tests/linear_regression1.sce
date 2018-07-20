@@ -4,4 +4,4 @@ getd('../')
 M = csvRead('Salary_Data.csv')
 M(or(isnan(M),'c'),:) = []
 
-machineLearn('logistic_regression', M, '');
+machineLearn('linear_regression', M, 'fit_intercept=False');

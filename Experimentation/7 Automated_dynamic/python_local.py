@@ -31,7 +31,7 @@ if(status == passw):
 	# # Path of the kernel connection file
 	cf 	= file
 	f 	= open("../server_commands.sh","w+")
-	f.write('export PATH="/home/' + user + '/anaconda3/bin:$PATH"\npython python_server.py ' + cf + ' ' + script + ' ' user + ' 0 ' + parameters)
+	f.write('export PATH="/home/' + user + '/anaconda3/bin:$PATH"\npython python_server.py ' + cf + ' ' + script + ' ' + user + ' 0 ' + parameters)
 	f.close()
 	os.popen('cat ../server_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip)
 	os.system('scp -i ~/.ssh/id_rsa ' + user + '@' + ip + ':~/attributes.p .')

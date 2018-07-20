@@ -59,6 +59,9 @@ function status = machineLearn(modelName, data, parameters)
 	end
 	models 	= mgetl('../models')
 	index 	= grep(models, modelName)
+	if(length(index) > 1)
+		index = index(1)
+	end
 	if(length(index) == 1)
 		if(strcmp(models(index), modelName) == 0)
 			fprintfMat('dataMat', data)
@@ -148,6 +151,9 @@ function status = machineLearnURL(modelName, preprocessing)
 	end
 	models 	= mgetl('../models')
 	index 	= grep(models, modelName)
+	if(length(index) > 1)
+		index = index(1)
+	end
 	if(length(index) == 1)
 		if(strcmp(models(index), modelName) == 0)
 			txt 		= mgetl('../python_local_url.py')
