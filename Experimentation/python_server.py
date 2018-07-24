@@ -22,7 +22,7 @@ print("Training started!")
 if(customflag == '0'):
 	workdata = '/home/' + user + '/Working/data'
 	homedir = '/home/' + user
-	command = open('/home/' + user + '/Scripts/' + modelName + '.py').read().replace('workdata','"' + workdata + '"').replace('homedir', '"' + homedir + '"').replace('parameters','"' + parameters + '"')
+	command = open('/home/' + user + '/Scripts/' + modelName + '.py').read().replace('workdata','"' + workdata + '"').replace('homedir', '"' + homedir + '"').replace('parameters',parameters)
 	print(command)
 	f = open(homedir + "/temp.py","w+")
 	f.write(command)
