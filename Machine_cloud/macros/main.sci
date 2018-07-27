@@ -31,6 +31,55 @@ function status = register(username, password, ip, toolbox_basedir)
 	status 	= 1
 endfunction
 
+function status = register(username, password, ip, toolbox_dir)
+	main 	= pyMain()
+	txt 	= mgetl(toolbox_dir + 'macros/python_register.py')
+	main.password 	= password
+	main.user 	 	= username
+	main.ip 		= ip
+	pyEvalStr(txt)
+	status 	= 1
+endfunction
+
+function status = loader(key,toolbox_dir)
+	files 		= listfiles(toolbox_dir + '/data/')
+	index 		= grep(files, 'username.data')
+	username 	= ''
+	password 	= ''
+	ip 			= ''
+	if(length(index) == 1)
+		username 	= mgetl('username.data')
+		password 	= mgetl('password.data')
+		ip 			= mgetl('ip.data')
+	else
+		username 				= input('User name : ',"string")
+		password 				= input('Password : ',"string")
+		ip 						= input('Cloud ip : ',"string")
+
+		fd = mopen('username.data','wt');
+		mputl(username,fd);
+		mclose(fd);
+
+		fd = mopen('password.data','wt');
+		mputl(password,fd);
+		mclose(fd);
+
+		fd = mopen('ip.data','wt');
+		mputl(ip,fd);
+		mclose(fd);
+	end
+	txt 		= mgetl(toolbox_dir + '/macros/python_load.py')
+	main 		= pyMain()
+	main.key 	= key 
+	main.user 	= username
+	main.passw 	= password
+	main.ip 	= ip
+	main.base 	= toolbox_dir
+	pyEvalStr(txt)
+	status = 1
+endfunction
+
+
 function status = machineLearn(modelName, data, toolbox_dir)
 
 	files 		= listfiles(toolbox_dir + '/data/')
@@ -249,4 +298,45 @@ function status = machineLearnCustomURL(script, preprocessing, toolbox_dir)
 	main.base 	= toolbox_dir
 	pyEvalStr(txt)
 	status = 1
+endfunction
+
+
+function status = machinePredict(pickle, data, toolbox_dir)
+	files 		= listfiles(toolbox_dir + '/data/')
+	index 		= grep(files, 'username.data')
+	username 	= ''
+	password 	= ''
+	ip 			= ''
+	if(length(index) == 1)
+		username 	= mgetl('username.data')
+		password 	= mgetl('password.data')
+		ip 			= mgetl('ip.data')
+	else
+		username 				= input('User name : ',"string")
+		password 				= input('Password : ',"string")
+		ip 						= input('Cloud ip : ',"string")
+
+		fd = mopen('username.data','wt');
+		mputl(username,fd);
+		mclose(fd);
+
+		fd = mopen('password.data','wt');
+		mputl(password,fd);
+		mclose(fd);
+
+		fd = mopen('ip.data','wt');
+		mputl(ip,fd);
+		mclose(fd);
+	end
+	fprintfMat('dataMat', data)
+	txt 		= mgetl(toolbox_dir + '/macros/python_local_predict.py')
+	main 		= pyMain()
+	main.data 	= data
+	main.user 	= username
+	main.passw 	= password
+	main.ip 	= ip
+	main.model 	= pickle
+	main.base 	= toolbox_dir
+	pyEvalStr(txt)
+	status 		= 1
 endfunction
