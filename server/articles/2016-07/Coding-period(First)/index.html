@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Checking the to-do list</title>
+  <meta name="description" content=" Initial stages :  I was expected to do the following as part of the `Google Summer of Code` period ...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://soumitraagarwal.github.io/BlendedJointAttention/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://soumitraagarwal.github.io/BlendedJointAttention/css/main.css">
+
+  <link rel="canonical" href="http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29">
+  <link rel="alternate" type="application/rss+xml" title="Blended Joint Attention" href="http://soumitraagarwal.github.io/BlendedJointAttention /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://soumitraagarwal.github.io/BlendedJointAttention/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://soumitraagarwal.github.io/BlendedJointAttention/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+         
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/d.jpg" alt="" class="avatar">
+  
+  <a href="http://soumitraagarwal.github.io/BlendedJointAttention/" class="author_name">Soumitra Agarwal</a>
+  <span class="author_job">Open source fan boy, Aspiring data scientist</span>
+  <span class="author_bio mbm">Yin and Yang of BCJA</span>
+  <!-- <span class="site_desc mbm">The blog of work updates of the Google summer of code project '16 (and beyond) Red Hen Labs</span> -->
+  <nav class="nav">
+    <ul class="nav-list">
+         
+      <li class="nav-item">
+        <a href="http://soumitraagarwal.github.io/BlendedJointAttention/tags/">Tags</a>
+        <span>/</span>
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://soumitraagarwal.github.io/BlendedJointAttention/archive/">Archive</a>
+        <span>/</span>
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://soumitraagarwal.github.io/BlendedJointAttention/categories/categories/">Categories</a>
+      </li>
+       
+    </ul>
+  </nav>
+  <div class="social-links">
+  <ul>
+    <li><a href="mailto:agarwalsoumitra1504@gmail.com" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="http://twitter.com/TheRealSoumitra" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    <li><a href="http://facebook.com/soumitra.agarwal.1" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    
+    <li><a href="http://linkedin.com/in/soumitra-agarwal-a84637a8?trk=nav_responsive_tab_profile_pic" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    <li><a href="http://instagram.com/soumitra_ag" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+    
+    <li><a href="http://github.com/SoumitraAgarwal" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://soumitraagarwal.github.io/BlendedJointAttention/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Checking the to-do list">Checking the to-do list</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        20 JUL 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    5 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <h2 id="initial-stages">Initial stages</h2>
+
+<p>I was expected to do the following as part of the <code>Google Summer of Code</code> period :</p>
+
+<ul>
+  <li>
+    <p>Unsupervised learning mechanism to separate out clips with different instances of blended classical joint attention.</p>
+  </li>
+  <li>
+    <p>Manually annotating the clips segregated (with ELAN) and finding out different elements that would contribute to different classes of BCJA.</p>
+  </li>
+  <li>
+    <p>Identifying the co-speech gestures that I have planned using already known
+classifiers.</p>
+  </li>
+  <li>
+    <p>Build our own classifier using manual as well as feedback from the earlier known
+classifier, thus improving it altogether.</p>
+  </li>
+  <li>
+    <p>Testing our classifier and error correction.</p>
+  </li>
+  <li>
+    <p>Gesture and micro-expression detection using data-sets of highly expressive anchors as data-sets.</p>
+  </li>
+  <li>
+    <p>Scene continuity and change detection.</p>
+  </li>
+</ul>
+
+<h2 id="work-flow-moderations">Work flow moderations</h2>
+
+<p>Since there are a lot of people working, there is a lot which is common across different proposals. So the work-flow changes more often than not. Thus, when the coding period began, what I needed to do to make a significant contribution to the organisation was very different that what I had proposed. Before the mid-term I was working on the <code>Red-Hen Lab</code> repository <a href="https://github.com/RedHenLab/BlendedJointAttention">BlendedClassicJointAttention</a>.</p>
+
+<h2 id="repositories">Repositories</h2>
+
+<p>There were two repositories that were worked upon the period. </p>
+
+<ul>
+  <li><a href="https://github.com/SoumitraAgarwal/BlendedJointAttention/commits/master">BlendedClassicJointAttention</a> : Workshop of algorithms where every method implemented was present. </li>
+  <li><a href="https://github.com/SoumitraAgarwal/BlendedJointAttentionClean/commits/master">BlendedClassicJointAttentionClean</a> : A python library like structure to use the accepted algorithm implementations all at one place.</li>
+</ul>
+
+<h2 id="blended-classic-joint-attention-repository">Blended Classic Joint Attention Repository</h2>
+
+<p>This repository deals with work done by The Distibuted Red Hen Lab towards classification of different instances of blended classic joint attention in various form of print, audio and video media. For more information visit the <a href="https://sites.google.com/site/distributedlittleredhen/home/the-cognitive-core-research-topics-in-red-hen/the-barnyard/blended-classic-joint-attention">Red-Hen Labs</a></p>
+
+<h3 id="sub-repositories">Sub-repositories</h3>
+
+<h4 id="face-detection">Face detection</h4>
+
+<p>Detection of number of human faces, possible extensions to their position and orientation. The files use Voila-Jones Haar classifier to detect human frontal and profile faces with the enhancement of template matching. The results can be seen as follows :</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Result5.jpg" /></p>
+
+<p>Template matching is a technique used to find a smaller image in a larger one. It works by sliding the small image accross the big one and it uses math to calculate which part of the bigger image is most likely to be the small image. This algorithm is nice because it always returns a value, unlike Haar cascades which is returns a position only if it finds a face.</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/img.png" /></p>
+
+<h4 id="emotion-recognition">Emotion recognition</h4>
+
+<p>Recognising different emotions (sad, happy, surprised, neutral etc.) using a CNN classifier. To see and example run :</p>
+
+<p><code>python webcam-emotions.py --displayWebcam --seeFaces --netFile soumitra.p</code></p>
+
+<p>To get best results (and tailored for the person who is using the webcam app), you can use the <code>webcam-emotions.py</code> script to record data, as follows,(train happy by replacing sad by happy):</p>
+
+<p><code>python webcam-emotions.py --displayWebcam --seeFaces --gather_training_data  --recording_emotion sad</code></p>
+
+<h4 id="gaze-direction-recognition">Gaze direction recognition</h4>
+
+<p>Calculating angle of ones gaze using initial pupil detection and terminal points of eyes. The algorithm used was from the <a href="http://www.inb.uni-luebeck.de/fileadmin/files/PUBPDFS/TiBa11b.pdf">paper</a> which deals with prediction of centre of the eye via gradients.</p>
+
+<p>The step-wise procedure is as follows :</p>
+
+<ul>
+  <li>Extraction of eyes from the face, via <code>Voila-Jones</code> Haar classifier
+<img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Result2.jpg" /></li>
+  <li>Extracting and thresholding the area near the eyes so that the dark part is apparent</li>
+  <li>Detection of blobs in the specified area</li>
+  <li>Finding centre of the blob via the algorithms<br />
+<img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/thresh_eye.jpg" /><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/eye1.jpg" /><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/eye2.jpg" /></li>
+</ul>
+
+<p>Several other algorithms, including use of hough circles are present in <code>bin</code> which were descarded as second to the upgiven.</p>
+
+<h4 id="context-recognition">Context recognition</h4>
+
+<p>Recognising what context is a specific scene in using Lucas-Kanade, optical flow. The following were the outputs in accordance to the used algorithms </p>
+
+<ul>
+  <li>
+    <p>Good features to track <br />
+<img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/image.jpg" /><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Good_Features.png" /></p>
+  </li>
+  <li>
+    <p>Lucas-Kanade <br />
+<img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/LK.png" /></p>
+  </li>
+  <li>
+    <p>Optical flow<br />
+<img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Optical_flow.png" /></p>
+  </li>
+</ul>
+
+<h4 id="scene-continuity">Scene continuity</h4>
+
+<p>Detection of a scene change by creating an average image at every new scene and calculating the difference with the newly observed. The following image would give a better insight into how the threshold and mean images were compared</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Scene2.png" /></p>
+
+<p>The upgiven image was how the threshold changes at different instances with it being re-initialised once a new frame is detected. The following image is a pictorial representation of how much an image differs from another.</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Scene1.png" /></p>
+
+<p>If this difference crosses a certain threshold, scene change is reported.</p>
+
+<h4 id="facial-landmark-detection">Facial Landmark detection</h4>
+
+<p>Detecting major facial landmarks, which is useful for Gaze direction and Emotion recognition. Pre-built python library <code>Dlib</code> was used to create a mat of human facial features, with a little tweaking. The outputs are as follows </p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Features1.png" /></p>
+
+<h4 id="head-pose">Head pose</h4>
+
+<p>Configuiring head pose to gaze direction and independent head pose estimation, via the features tracked in the Facial landmark repository. </p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/output.gif" /></p>
+
+<h4 id="gesture-recognition">Gesture Recognition</h4>
+
+<p>Recognising multimodal gestures. Since this required parsing through ELAN files and reading EAF for different gesture signals combined with video.</p>
+
+<h4 id="posture-recognition">Posture Recognition</h4>
+
+<p>Body posture recognition was worked upon using flowing puppets and Histogram of gradients.
+Something like the walking posture can be seen here</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/result.jpg" /></p>
+
+<h4 id="window-size">Window Size</h4>
+
+<p>The size and number of different windows is the giveaway clue to predicting whether Blended Classical Joint Attention exxists or not. Thus contour detection and shape matching techniques were used to predict the number of rectngular shapes.</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/Temp.jpg" /></p>
+
+<h4 id="reaction-shots">Reaction Shots</h4>
+
+<p>Analyse reaction shots (of surprise, awe etc.) </p>
+
+<h2 id="blended-joint-attention-clean">Blended joint attention clean</h2>
+
+<p>A python library like structure to use the accepted algorithm implementations all at one place.
+Which looks something like this :</p>
+
+<p><img src="http://soumitraagarwal.github.io/BlendedJointAttention/img/BCJA.png" /></p>
+
+<p>The repository can be looked upon <a href="https://github.com/RedHenLab/BlendedJointAttentionClean">here</a>. The accepted algorithms were placed on the Case High performance computing cluster. </p>
+
+<h3 id="required-packages">Required Packages:</h3>
+
+<ol>
+	<li> Python 2.7.x </li>
+	<li> Numpy </li>
+	<li> Bob </li>
+	<li> Matplotlib </li>
+	<li> OpenCV (One must check compatibility with python and OS) </li>
+	<li> DLib </li>
+	<li> pympi-ling </li>
+	<li> PySceneDetect </li>
+	<li> Read </li>
+</ol>
+
+<h3 id="authors">Authors:</h3>
+
+<ol>
+ 	<li> Dr.Mark Turner </li>
+ 	<li> Dr.Francis Steen </li>
+	<li> <a href="https://github.com/SoumitraAgarwal" target="_blank">Soumitra Agarwal</a> :neckbeard: </li>
+	<li> Debayan Das </li>
+</ol>
+
+<h6 id="thank-you-for-reading">Thank you for reading</h6>
+
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 Soumitra Agarwal. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://soumitraagarwal.github.io/BlendedJointAttention/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://soumitraagarwal.github.io/BlendedJointAttention/js/main.js"></script>
+
+
+</body>
+</html>
