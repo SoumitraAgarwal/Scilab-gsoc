@@ -1,0 +1,67 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title:       "Blended Joint Attention"
+description: "The blog of work updates of the Google summer of code project '16 (and beyond) Red Hen Labs"
+url:         "http://soumitraagarwal.github.io/BlendedJointAttention"
+gems:         ["jemoji"]
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Asia/Kolkata
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Soumitra Agarwal
+  avatar: d.jpg
+  meme1 : a.jpg
+  job: "Open source fan boy, Aspiring data scientist"
+  bio: "Yin and Yang of BCJA"
+  bio2: "The blog of work updates of the Google summer of code project '16 (and beyond) Red Hen Labs"
+  email: "agarwalsoumitra1504@gmail.com"
+  disqus-shortname:
+  twitter:  TheRealSoumitra
+  facebook: soumitra.agarwal.1
+  google:
+    plus:
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: SoumitraAgarwal
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: soumitra-agarwal-a84637a8?trk=nav_responsive_tab_profile_pic
+  xing: #username
+  instagram: soumitra_ag
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
