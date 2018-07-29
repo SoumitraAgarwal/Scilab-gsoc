@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The machine learning cloud</title>
+  <meta name="description" content=" Exxperimentation :  Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was ...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://0.0.0.0:4000//css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://0.0.0.0:4000//css/main.css">
+
+  <link rel="canonical" href="http://0.0.0.0:4000//articles/2018-07/Coding-period(First)">
+  <link rel="alternate" type="application/rss+xml" title="Machine learning among other thigns" href="http://0.0.0.0:4000/ /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://0.0.0.0:4000//favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://0.0.0.0:4000//favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+         
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://0.0.0.0:4000//img/d.jpg" alt="" class="avatar">
+  
+  <a href="http://0.0.0.0:4000//" class="author_name">Soumitra Agarwal</a>
+  <span class="author_job">Open source fan boy, Aspiring data scientist</span>
+  <span class="author_bio mbm">In and out of Machine learning in Scilab</span>
+  <!-- <span class="site_desc mbm">The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</span> -->
+  <nav class="nav">
+    <ul class="nav-list">
+       
+      <li class="nav-item">
+        <a href="http://0.0.0.0:4000//archive/">Archive</a>
+        <span>/</span>
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://0.0.0.0:4000//categories/">Categories</a>
+        <span>/</span>
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://0.0.0.0:4000//tags/">Tags</a>
+      </li>
+       
+    </ul>
+  </nav>
+  <div class="social-links">
+  <ul>
+    <li><a href="mailto:agarwalsoumitra1504@gmail.com" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="http://twitter.com/TheRealSoumitra" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    <li><a href="http://facebook.com/soumitra.agarwal.1" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    
+    <li><a href="http://linkedin.com/in/soumitra-agarwal-a84637a8?trk=nav_responsive_tab_profile_pic" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    <li><a href="http://instagram.com/soumitra_ag" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+    
+    <li><a href="http://github.com/SoumitraAgarwal" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://0.0.0.0:4000//" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="The machine learning cloud">The machine learning cloud</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        29 JUL 2018
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    4 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <h2 id="experimentation">Experimentation</h2>
+
+<p>Coming towards the second half of the <code>Google Summer of Code</code> period, an experimentation setup was planned. This was exactly what comes under exploring uncharted territories. We were planning to create a machine learning architecture integrated with an easy to use cloud based interface. It turned out to be much more. With the help of the present toolbox, one can use a predefined set of algorithms (which basically emulate the scikit-learn api for python) and can run their custom script with effect of a single function. </p>
+
+<p>In this blog post, you get a free tour of how the work progressedd and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the <a href="https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation">github sub-repository</a>.</p>
+
+<h2 id="work-updates">Work updates</h2>
+
+<p>This section gives you an insight into how each feature was added to the setup. Each update is preserved in form of a sub repository on github and thus the progress can be analysed. The progress is explained in 10 steps below. The flow is explained as (from the scripts in Automated) :</p>
+
+<ul>
+  <li>Script <algorithm.sci> is called from a directory on the local server. This script calls python_local.py.</algorithm.sci></li>
+  <li>Script <python_local.py> clears all already running jupyter kernels and starts a new kernel in a nohup fashion, thus appending the output to nohup.out. After the kernel starts, the script copies the dataset and python script to the server to directory /home/username/Shared/</python_local.py></li>
+  <li>Then the script runs the <python_server.py> with the parameters of the running kernel obtained from <python_local.py>. </python_local.py></python_server.py></li>
+  <li>The script <python_server.py> then starts a connection to the kernel and runs the training script with the results stored in <attributes.p></attributes.p></python_server.py></li>
+  <li>Then our process returns back to <python_local.py> which then copies back the <attributes.p> pickle file in protocol 2. </attributes.p></python_local.py></li>
+  <li>Then <algorithm.sci> reads the pickle file and then uses it as and so required.</algorithm.sci></li>
+</ul>
+
+<p>A lot of additions/modifications were made from this initial setup. For the experimentation part the progress was made in 10 steps. Each of these steps can be viewed in
+on the github directory in different (numbered) sub directories. Our toolbox has dependencies over PIMS.</p>
+
+<ul>
+  <li>
+    <p>The first step was to automate the complete training procedure. This was done by writing a scilab script which copies a python script with a dataset to a server and then runs the script on the server and then copies the attributes back.</p>
+  </li>
+  <li>
+    <p>The second addition was to move the script to the server earlier itself and then only move the
+preprocessed dataset to the server and the copy the attributes back.</p>
+  </li>
+  <li>
+    <p>The third addition was to add a custom url for dowloading the dataset on the server itself and then copying a preprocessing script. This led to reduced time taken for the complete process. Thus we now had two different flows to proceed.</p>
+  </li>
+  <li>
+    <p>The fourth step was to add authentication for a user. (This would later be updated so that a user’s details are stored and then not asked for repeatedly)</p>
+  </li>
+  <li>
+    <p>The fifth step included an addition of custom python files that can be pushed by the user as
+well. This was integrated with both our original functionality and the url based method. This added the third and the fourth flow to our setup.</p>
+  </li>
+  <li>
+    <p>The next step was to add a mechanism to remove the repeated input for user end arguments. This was done by adding a data section to the toolbox.</p>
+  </li>
+  <li>
+    <p>Addition of parameters to the scikit learn function was then enabled (in a string form) which helped us emulate the complete scikit learn repository</p>
+  </li>
+  <li>
+    <p>Automated testing mechanism was added for each of the flows as well as utilities such as password change nd user register, with a demo file to run them all at once.</p>
+  </li>
+  <li>
+    <p>Advanced tests were written so that all the predefined algorithms are also tested with each flow</p>
+  </li>
+  <li>
+    <p>A loader script was written which transfers the required server files to a new user on the cloud.</p>
+  </li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>This section explains the usage of the setup and how one can check whether it is working fine or not. There are around 6 different flows that one can make use of.</p>
+
+<h2 id="the-toolbox">The toolbox</h2>
+
+<p>This repository deals with work done by The Distibuted Red Hen Lab towards classification of different instances of blended classic joint attention in various form of print, audio and video media. For more information visit the <a href="https://sites.google.com/site/distributedlittleredhen/home/the-cognitive-core-research-topics-in-red-hen/the-barnyard/blended-classic-joint-attention">Red-Hen Labs</a></p>
+
+<p>Detection of number of human faces, possible extensions to their position and orientation. The files use Voila-Jones Haar classifier to detect human frontal and profile faces with the enhancement of template matching. The results can be seen as follows :</p>
+
+<h2 id="the-standalone-toolbox">The standalone toolbox</h2>
+
+<p>A python library like structure to use the accepted algorithm implementations all at one place.
+Which looks something like this :</p>
+
+<p><img src="http://0.0.0.0:4000//img/BCJA.png" /></p>
+
+<p>The repository can be looked upon <a href="https://github.com/RedHenLab/BlendedJointAttentionClean">here</a>. The accepted algorithms were placed on the Case High performance computing cluster. </p>
+
+<h3 id="required-packages">Required Packages:</h3>
+
+<ol>
+	<li> PIMS </li>
+	<li> Scilab &gt;= 5.2 </li>
+	<li> Python 3</li>
+</ol>
+
+<h3 id="authors">Authors:</h3>
+
+<ul>
+  <li><a href="https://github.com/SoumitraAgarwal" target="_blank">Soumitra Agarwal</a> <img class="emoji" title=":neckbeard:" alt=":neckbeard:" src="https://assets.github.com/images/icons/emoji/neckbeard.png" height="20" width="20" align="absmiddle" /></li>
+</ul>
+
+<h6 id="thank-you-for-reading">Thank you for reading</h6>
+
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 Soumitra Agarwal. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://0.0.0.0:4000//js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://0.0.0.0:4000//js/main.js"></script>
+
+
+</body>
+</html>

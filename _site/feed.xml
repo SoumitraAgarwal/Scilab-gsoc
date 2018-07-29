@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine learning among other thigns</title>
+    <description>The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</description>
+    <link>http://0.0.0.0:4000//</link>
+    <atom:link href="http://0.0.0.0:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 29 Jul 2018 14:38:08 +0530</pubDate>
+    <lastBuildDate>Sun, 29 Jul 2018 14:38:08 +0530</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>The machine learning cloud</title>
+        <description>&lt;h2 id=&quot;experimentation&quot;&gt;Experimentation&lt;/h2&gt;
+
+&lt;p&gt;Coming towards the second half of the &lt;code&gt;Google Summer of Code&lt;/code&gt; period, an experimentation setup was planned. This was exactly what comes under exploring uncharted territories. We were planning to create a machine learning architecture integrated with an easy to use cloud based interface. It turned out to be much more. With the help of the present toolbox, one can use a predefined set of algorithms (which basically emulate the scikit-learn api for python) and can run their custom script with effect of a single function. &lt;/p&gt;
+
+&lt;p&gt;In this blog post, you get a free tour of how the work progressedd and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the &lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation&quot;&gt;github sub-repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;work-updates&quot;&gt;Work updates&lt;/h2&gt;
+
+&lt;p&gt;This section gives you an insight into how each feature was added to the setup. Each update is preserved in form of a sub repository on github and thus the progress can be analysed. The progress is explained in 10 steps below. The flow is explained as (from the scripts in Automated) :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Script &lt;algorithm.sci&gt; is called from a directory on the local server. This script calls python_local.py.&lt;/algorithm.sci&gt;&lt;/li&gt;
+  &lt;li&gt;Script &lt;python_local.py&gt; clears all already running jupyter kernels and starts a new kernel in a nohup fashion, thus appending the output to nohup.out. After the kernel starts, the script copies the dataset and python script to the server to directory /home/username/Shared/&lt;/python_local.py&gt;&lt;/li&gt;
+  &lt;li&gt;Then the script runs the &lt;python_server.py&gt; with the parameters of the running kernel obtained from &lt;python_local.py&gt;. &lt;/python_local.py&gt;&lt;/python_server.py&gt;&lt;/li&gt;
+  &lt;li&gt;The script &lt;python_server.py&gt; then starts a connection to the kernel and runs the training script with the results stored in &lt;attributes.p&gt;&lt;/attributes.p&gt;&lt;/python_server.py&gt;&lt;/li&gt;
+  &lt;li&gt;Then our process returns back to &lt;python_local.py&gt; which then copies back the &lt;attributes.p&gt; pickle file in protocol 2. &lt;/attributes.p&gt;&lt;/python_local.py&gt;&lt;/li&gt;
+  &lt;li&gt;Then &lt;algorithm.sci&gt; reads the pickle file and then uses it as and so required.&lt;/algorithm.sci&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A lot of additions/modifications were made from this initial setup. For the experimentation part the progress was made in 10 steps. Each of these steps can be viewed in
+on the github directory in different (numbered) sub directories. Our toolbox has dependencies over PIMS.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The first step was to automate the complete training procedure. This was done by writing a scilab script which copies a python script with a dataset to a server and then runs the script on the server and then copies the attributes back.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The second addition was to move the script to the server earlier itself and then only move the
+preprocessed dataset to the server and the copy the attributes back.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The third addition was to add a custom url for dowloading the dataset on the server itself and then copying a preprocessing script. This led to reduced time taken for the complete process. Thus we now had two different flows to proceed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The fourth step was to add authentication for a user. (This would later be updated so that a user’s details are stored and then not asked for repeatedly)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The fifth step included an addition of custom python files that can be pushed by the user as
+well. This was integrated with both our original functionality and the url based method. This added the third and the fourth flow to our setup.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The next step was to add a mechanism to remove the repeated input for user end arguments. This was done by adding a data section to the toolbox.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Addition of parameters to the scikit learn function was then enabled (in a string form) which helped us emulate the complete scikit learn repository&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Automated testing mechanism was added for each of the flows as well as utilities such as password change nd user register, with a demo file to run them all at once.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Advanced tests were written so that all the predefined algorithms are also tested with each flow&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A loader script was written which transfers the required server files to a new user on the cloud.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;This section explains the usage of the setup and how one can check whether it is working fine or not. There are around 6 different flows that one can make use of.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-toolbox&quot;&gt;The toolbox&lt;/h2&gt;
+
+&lt;p&gt;This repository deals with work done by The Distibuted Red Hen Lab towards classification of different instances of blended classic joint attention in various form of print, audio and video media. For more information visit the &lt;a href=&quot;https://sites.google.com/site/distributedlittleredhen/home/the-cognitive-core-research-topics-in-red-hen/the-barnyard/blended-classic-joint-attention&quot;&gt;Red-Hen Labs&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Detection of number of human faces, possible extensions to their position and orientation. The files use Voila-Jones Haar classifier to detect human frontal and profile faces with the enhancement of template matching. The results can be seen as follows :&lt;/p&gt;
+
+&lt;h2 id=&quot;the-standalone-toolbox&quot;&gt;The standalone toolbox&lt;/h2&gt;
+
+&lt;p&gt;A python library like structure to use the accepted algorithm implementations all at one place.
+Which looks something like this :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/BCJA.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The repository can be looked upon &lt;a href=&quot;https://github.com/RedHenLab/BlendedJointAttentionClean&quot;&gt;here&lt;/a&gt;. The accepted algorithms were placed on the Case High performance computing cluster. &lt;/p&gt;
+
+&lt;h3 id=&quot;required-packages&quot;&gt;Required Packages:&lt;/h3&gt;
+
+&lt;ol&gt;
+	&lt;li&gt; PIMS &lt;/li&gt;
+	&lt;li&gt; Scilab &amp;gt;= 5.2 &lt;/li&gt;
+	&lt;li&gt; Python 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;Authors:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal&quot; target=&quot;_blank&quot;&gt;Soumitra Agarwal&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:neckbeard:&quot; alt=&quot;:neckbeard:&quot; src=&quot;https://assets.github.com/images/icons/emoji/neckbeard.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>Sun, 29 Jul 2018 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000//articles/2018-07/Coding-period(First)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000//articles/2018-07/Coding-period(First)</guid>
+        
+        
+        <category>coding period</category>
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blended Joint Attention</title>
+    <description>The blog of work updates of the Google summer of code project '16 (and beyond) Red Hen Labs</description>
+    <link>http://soumitraagarwal.github.io/BlendedJointAttention/</link>
+    <atom:link href="http://soumitraagarwal.github.io/BlendedJointAttention/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>2018-07-29 12:12:55 +0530</pubDate>
+    <lastBuildDate>2018-07-29 12:12:55 +0530</lastBuildDate>
+    <generator>Jekyll v</generator>
+    
+      <item>
+        <title>Checking the to-do list</title>
+        <description>&lt;h2 id=&quot;initial-stages&quot;&gt;Initial stages&lt;/h2&gt;
+
+&lt;p&gt;I was expected to do the following as part of the &lt;code&gt;Google Summer of Code&lt;/code&gt; period :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unsupervised learning mechanism to separate out clips with different instances of blended classical joint attention.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Manually annotating the clips segregated (with ELAN) and finding out different elements that would contribute to different classes of BCJA.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Identifying the co-speech gestures that I have planned using already known
+classifiers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build our own classifier using manual as well as feedback from the earlier known
+classifier, thus improving it altogether.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Testing our classifier and error correction.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gesture and micro-expression detection using data-sets of highly expressive anchors as data-sets.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Scene continuity and change detection.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;work-flow-moderations&quot;&gt;Work flow moderations&lt;/h2&gt;
+
+&lt;p&gt;Since there are a lot of people working, there is a lot which is common across different proposals. So the work-flow changes more often than not. Thus, when the coding period began, what I needed to do to make a significant contribution to the organisation was very different that what I had proposed. Before the mid-term I was working on the &lt;code&gt;Red-Hen Lab&lt;/code&gt; repository &lt;a href=&quot;https://github.com/RedHenLab/BlendedJointAttention&quot;&gt;BlendedClassicJointAttention&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;repositories&quot;&gt;Repositories&lt;/h2&gt;
+
+&lt;p&gt;There were two repositories that were worked upon the period. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal/BlendedJointAttention/commits/master&quot;&gt;BlendedClassicJointAttention&lt;/a&gt; : Workshop of algorithms where every method implemented was present. &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal/BlendedJointAttentionClean/commits/master&quot;&gt;BlendedClassicJointAttentionClean&lt;/a&gt; : A python library like structure to use the accepted algorithm implementations all at one place.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;blended-classic-joint-attention-repository&quot;&gt;Blended Classic Joint Attention Repository&lt;/h2&gt;
+
+&lt;p&gt;This repository deals with work done by The Distibuted Red Hen Lab towards classification of different instances of blended classic joint attention in various form of print, audio and video media. For more information visit the &lt;a href=&quot;https://sites.google.com/site/distributedlittleredhen/home/the-cognitive-core-research-topics-in-red-hen/the-barnyard/blended-classic-joint-attention&quot;&gt;Red-Hen Labs&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;sub-repositories&quot;&gt;Sub-repositories&lt;/h3&gt;
+
+&lt;h4 id=&quot;face-detection&quot;&gt;Face detection&lt;/h4&gt;
+
+&lt;p&gt;Detection of number of human faces, possible extensions to their position and orientation. The files use Voila-Jones Haar classifier to detect human frontal and profile faces with the enhancement of template matching. The results can be seen as follows :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Result5.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Template matching is a technique used to find a smaller image in a larger one. It works by sliding the small image accross the big one and it uses math to calculate which part of the bigger image is most likely to be the small image. This algorithm is nice because it always returns a value, unlike Haar cascades which is returns a position only if it finds a face.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/img.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;emotion-recognition&quot;&gt;Emotion recognition&lt;/h4&gt;
+
+&lt;p&gt;Recognising different emotions (sad, happy, surprised, neutral etc.) using a CNN classifier. To see and example run :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python webcam-emotions.py --displayWebcam --seeFaces --netFile soumitra.p&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To get best results (and tailored for the person who is using the webcam app), you can use the &lt;code&gt;webcam-emotions.py&lt;/code&gt; script to record data, as follows,(train happy by replacing sad by happy):&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python webcam-emotions.py --displayWebcam --seeFaces --gather_training_data  --recording_emotion sad&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;gaze-direction-recognition&quot;&gt;Gaze direction recognition&lt;/h4&gt;
+
+&lt;p&gt;Calculating angle of ones gaze using initial pupil detection and terminal points of eyes. The algorithm used was from the &lt;a href=&quot;http://www.inb.uni-luebeck.de/fileadmin/files/PUBPDFS/TiBa11b.pdf&quot;&gt;paper&lt;/a&gt; which deals with prediction of centre of the eye via gradients.&lt;/p&gt;
+
+&lt;p&gt;The step-wise procedure is as follows :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Extraction of eyes from the face, via &lt;code&gt;Voila-Jones&lt;/code&gt; Haar classifier
+&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Result2.jpg&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Extracting and thresholding the area near the eyes so that the dark part is apparent&lt;/li&gt;
+  &lt;li&gt;Detection of blobs in the specified area&lt;/li&gt;
+  &lt;li&gt;Finding centre of the blob via the algorithms&lt;br /&gt;
+&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/thresh_eye.jpg&quot; /&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/eye1.jpg&quot; /&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/eye2.jpg&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Several other algorithms, including use of hough circles are present in &lt;code&gt;bin&lt;/code&gt; which were descarded as second to the upgiven.&lt;/p&gt;
+
+&lt;h4 id=&quot;context-recognition&quot;&gt;Context recognition&lt;/h4&gt;
+
+&lt;p&gt;Recognising what context is a specific scene in using Lucas-Kanade, optical flow. The following were the outputs in accordance to the used algorithms &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Good features to track &lt;br /&gt;
+&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/image.jpg&quot; /&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Good_Features.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lucas-Kanade &lt;br /&gt;
+&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/LK.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Optical flow&lt;br /&gt;
+&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Optical_flow.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;scene-continuity&quot;&gt;Scene continuity&lt;/h4&gt;
+
+&lt;p&gt;Detection of a scene change by creating an average image at every new scene and calculating the difference with the newly observed. The following image would give a better insight into how the threshold and mean images were compared&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Scene2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The upgiven image was how the threshold changes at different instances with it being re-initialised once a new frame is detected. The following image is a pictorial representation of how much an image differs from another.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Scene1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If this difference crosses a certain threshold, scene change is reported.&lt;/p&gt;
+
+&lt;h4 id=&quot;facial-landmark-detection&quot;&gt;Facial Landmark detection&lt;/h4&gt;
+
+&lt;p&gt;Detecting major facial landmarks, which is useful for Gaze direction and Emotion recognition. Pre-built python library &lt;code&gt;Dlib&lt;/code&gt; was used to create a mat of human facial features, with a little tweaking. The outputs are as follows &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Features1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;head-pose&quot;&gt;Head pose&lt;/h4&gt;
+
+&lt;p&gt;Configuiring head pose to gaze direction and independent head pose estimation, via the features tracked in the Facial landmark repository. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/output.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;gesture-recognition&quot;&gt;Gesture Recognition&lt;/h4&gt;
+
+&lt;p&gt;Recognising multimodal gestures. Since this required parsing through ELAN files and reading EAF for different gesture signals combined with video.&lt;/p&gt;
+
+&lt;h4 id=&quot;posture-recognition&quot;&gt;Posture Recognition&lt;/h4&gt;
+
+&lt;p&gt;Body posture recognition was worked upon using flowing puppets and Histogram of gradients.
+Something like the walking posture can be seen here&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/result.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;window-size&quot;&gt;Window Size&lt;/h4&gt;
+
+&lt;p&gt;The size and number of different windows is the giveaway clue to predicting whether Blended Classical Joint Attention exxists or not. Thus contour detection and shape matching techniques were used to predict the number of rectngular shapes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/Temp.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;reaction-shots&quot;&gt;Reaction Shots&lt;/h4&gt;
+
+&lt;p&gt;Analyse reaction shots (of surprise, awe etc.) &lt;/p&gt;
+
+&lt;h2 id=&quot;blended-joint-attention-clean&quot;&gt;Blended joint attention clean&lt;/h2&gt;
+
+&lt;p&gt;A python library like structure to use the accepted algorithm implementations all at one place.
+Which looks something like this :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/BCJA.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The repository can be looked upon &lt;a href=&quot;https://github.com/RedHenLab/BlendedJointAttentionClean&quot;&gt;here&lt;/a&gt;. The accepted algorithms were placed on the Case High performance computing cluster. &lt;/p&gt;
+
+&lt;h3 id=&quot;required-packages&quot;&gt;Required Packages:&lt;/h3&gt;
+
+&lt;ol&gt;
+	&lt;li&gt; Python 2.7.x &lt;/li&gt;
+	&lt;li&gt; Numpy &lt;/li&gt;
+	&lt;li&gt; Bob &lt;/li&gt;
+	&lt;li&gt; Matplotlib &lt;/li&gt;
+	&lt;li&gt; OpenCV (One must check compatibility with python and OS) &lt;/li&gt;
+	&lt;li&gt; DLib &lt;/li&gt;
+	&lt;li&gt; pympi-ling &lt;/li&gt;
+	&lt;li&gt; PySceneDetect &lt;/li&gt;
+	&lt;li&gt; Read &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;Authors:&lt;/h3&gt;
+
+&lt;ol&gt;
+ 	&lt;li&gt; Dr.Mark Turner &lt;/li&gt;
+ 	&lt;li&gt; Dr.Francis Steen &lt;/li&gt;
+	&lt;li&gt; &lt;a href=&quot;https://github.com/SoumitraAgarwal&quot; target=&quot;_blank&quot;&gt;Soumitra Agarwal&lt;/a&gt; :neckbeard: &lt;/li&gt;
+	&lt;li&gt; Debayan Das &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>2016-07-20 00:00:00 +0530</pubDate>
+        <link>http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29</link>
+        <guid isPermaLink="true">http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period%28First%29</guid>
+        
+        
+        <category>Coding period</category>
+        
+      </item>
+    
+      <item>
+        <title>What we did, What we wish we did</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/c.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-we-did&quot;&gt;What we did&lt;/h3&gt;
+
+&lt;p&gt;Here is a list of things I could do during the community bolding period :&lt;/p&gt;
+
+&lt;ol start=&quot;0&quot;&gt;
+	&lt;li&gt;Got myself the title of a Red Hen. Look for me &lt;a target=&quot;_blank&quot; href=&quot;https://sites.google.com/site/distributedlittleredhen/home/profiles-of-red-hen-participants&quot;&gt;here&lt;/a&gt;, and find out which Red Hen are you &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=dA5CuN7YJdM&amp;amp;feature=youtu.be&quot;&gt;here&lt;/a&gt; &lt;/li&gt;
+	&lt;li&gt;Bonded with the Red Hen Lab community. &lt;/li&gt; Got to know a lot of new people who have worked for Red Hen in a direct or indirect way, which help me understand the working paradigms as well as the functioning of already existing research. Because without that :
+
+&lt;/ol&gt;
+
+&lt;p class=&quot;notice&quot;&gt;“Life seemed even more of a guessing game than usual.” 	― Julian Barnes, The Sense of an Ending&lt;/p&gt;
+
+&lt;ol start=&quot;2&quot;&gt;
+	&lt;li&gt; Started with setting up an RPi Digital video recording station. Oh I love hardware, and specially when you get recognized to use it. &lt;/li&gt;
+	&lt;li&gt; Pushed 250 commits to different repos (including &lt;a href=&quot;https://github.com/SoumitraAgarwal/BlendedJointAttention&quot;&gt;blended classical attention&lt;/a&gt; for Red Hen Lab) in a week. By far the best Open Source week I have had.&lt;/li&gt;
+	&lt;li&gt; Set up a personal &lt;a href=&quot;http://soumitraagarwal.github.io/&quot;&gt;blog&lt;/a&gt;, which should be updated here and there sometime later. &lt;i&gt;Don't procrastinate&lt;/i&gt; . Okay I am doing it. :unamused: &lt;/li&gt;
+	&lt;li&gt; Set up this record of updates, for my Google summer of code project &lt;/li&gt;
+	&lt;li&gt; Though about the odds which would favour an upside down mermaid. &lt;i&gt;Not the correct place Soumitra&lt;/i&gt;. Ohh, nevermind :sweat_smile: &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p class=&quot;notice&quot;&gt;“If writers wrote as carelessly as some people talk, then adhasdh asdglaseuyt[bn[ pasdlgkhasdfasdf.” &lt;/p&gt;
+
+&lt;h6 id=&quot;just-for-fun&quot;&gt;Just for fun!&lt;/h6&gt;
+
+</description>
+        <pubDate>2016-05-22 00:00:00 +0530</pubDate>
+        <link>http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-05/Community-bondind%28Third%29</link>
+        <guid isPermaLink="true">http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-05/Community-bondind%28Third%29</guid>
+        
+        
+        <category>Community bonding</category>
+        
+      </item>
+    
+      <item>
+        <title>Opening the world to new possibilities</title>
+        <description>&lt;h3 id=&quot;creating-a-raspberry-pi-dvr-setup&quot;&gt;Creating a Raspberry Pi DVR setup&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/b.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Contributions to an open source organisations might be related to development, design etc. When your mentors send you a Raspberry Pi to set up a digital TV recording station in India, you know you are up to something serious.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The packets were looked up, ordered, dispatched and recieved with a little hassle here and there.&lt;/p&gt;
+
+&lt;p&gt;Setting up wasn’t so tough either. Though without the proper HD Homerun tuner, we cannot actually record the television, but we can be sure of the fact that we can once we recieve it. &lt;/p&gt;
+
+&lt;h3 id=&quot;the-setup&quot;&gt;The setup&lt;/h3&gt;
+
+&lt;p&gt;Started as this :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/e.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we are here :&lt;/p&gt;
+
+&lt;figure class=&quot;half&quot;&gt;
+	&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/f.jpg&quot; /&gt;
+	&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/g.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Just in case someone is wondering, or if you have read so far, this obviously in not a complete setup. But soon will be. Any suggestions on tuners for a HDHomerun in India are welcome.&lt;/p&gt;
+
+&lt;h6 id=&quot;cheers&quot;&gt;Cheers!&lt;/h6&gt;
+</description>
+        <pubDate>2016-05-19 00:00:00 +0530</pubDate>
+        <link>http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-05/Community-bonding%28Second%29</link>
+        <guid isPermaLink="true">http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-05/Community-bonding%28Second%29</guid>
+        
+        
+        <category>Community bonding</category>
+        
+      </item>
+    
+      <item>
+        <title>Pristine eyes to see the world</title>
+        <description>&lt;h3 id=&quot;into-the-wild&quot;&gt;Into the wild&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://soumitraagarwal.github.io/BlendedJointAttention/img/a.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a lot to Open-Source. Even more when your organisation deals with lots of data. The distibuted &lt;a href=&quot;https://sites.google.com/site/distributedlittleredhen/home&quot;&gt;Red Hen Lab&lt;/a&gt; is a global laboratory and consortium for research into multimodal communication. This year, I being one of the &lt;code&gt;GSoC'ers&lt;/code&gt; would be contributing into gesture recognition and other things, as discussed in the community bonding period.&lt;/p&gt;
+
+&lt;p&gt;Community bonding might be tough for introverts. It all began with a skype call. &lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;em&gt;A lot can happen over a skype call. Specially if it lasts 2 hours&lt;/em&gt; &lt;/p&gt;
+
+&lt;p&gt;Proposals are generally overcooked. So was mine, full of quartos and folios of work which probably would be very tough to pull off during the coding period. So, the most important thing that remained now, was indexing tasks according to their priority so that nothing important is left incomplete. &lt;/p&gt;
+
+&lt;h3 id=&quot;towards-the-end-of-the-tunnel&quot;&gt;Towards the end of the tunnel&lt;/h3&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;em&gt;“Be genuinely interested in everyone you meet and everyone you meet will be genuinely interested in you”&lt;/em&gt; 			― Rasheed Ogunlaru&lt;/p&gt;
+
+&lt;p&gt;GSoC is a lot about meeting and interacting with new people. Even a newer you. People come with experience. That is what humans rely on to progress. So we interacted with new people, who have been contributing to the organisation. &lt;/p&gt;
+
+&lt;p&gt;In the end, I was added as a &lt;code&gt;member&lt;/code&gt; of the organisation on Github. There was a lot to gain and nothing to lose. No one should miss such an arbitrage opprtuinity. :wink:&lt;/p&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>2016-05-14 00:00:00 +0530</pubDate>
+        <link>http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-05/Community-bonding%28First%29</link>
+        <guid isPermaLink="true">http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-05/Community-bonding%28First%29</guid>
+        
+        
+        <category>Community bonding</category>
+        
+      </item>
+    
+  </channel>
+</rss>

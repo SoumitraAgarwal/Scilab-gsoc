@@ -3,9 +3,9 @@
 # Site wide configuration
 ####################################
 #
-title:       "Blended Joint Attention"
-description: "The blog of work updates of the Google summer of code project '16 (and beyond) Red Hen Labs"
-url:         "http://soumitraagarwal.github.io/BlendedJointAttention"
+title:       "Machine learning among other thigns"
+description: "The blog of work updates of the Google summer of code project '18 (and beyond) Scilab"
+url:         "http://www.soumitraagarwal.github.io/Scilab-gsoc/"
 gems:         ["jemoji"]
 
 #
@@ -36,8 +36,8 @@ owner:
   avatar: d.jpg
   meme1 : a.jpg
   job: "Open source fan boy, Aspiring data scientist"
-  bio: "Yin and Yang of BCJA"
-  bio2: "The blog of work updates of the Google summer of code project '16 (and beyond) Red Hen Labs"
+  bio: "In and out of Machine learning in Scilab"
+  bio2: "The blog of work updates of the Google summer of code project '18 (and beyond) Scilab"
   email: "agarwalsoumitra1504@gmail.com"
   disqus-shortname:
   twitter:  TheRealSoumitra
