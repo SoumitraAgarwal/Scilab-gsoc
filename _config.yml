@@ -5,7 +5,7 @@
 #
 title:       "Machine learning among other thigns"
 description: "The blog of work updates of the Google summer of code project '18 (and beyond) Scilab"
-url:         "http://www.soumitraagarwal.github.io/Scilab-gsoc/"
+url:         "https://soumitraagarwal.github.io/Scilab-gsoc/"
 gems:         ["jemoji"]
 
 #
