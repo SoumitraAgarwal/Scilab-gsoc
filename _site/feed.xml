@@ -5,8 +5,8 @@
     <description>The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</description>
     <link>http://0.0.0.0:4000//</link>
     <atom:link href="http://0.0.0.0:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Jul 2018 14:38:08 +0530</pubDate>
-    <lastBuildDate>Sun, 29 Jul 2018 14:38:08 +0530</lastBuildDate>
+    <pubDate>Sun, 29 Jul 2018 17:28:42 +0530</pubDate>
+    <lastBuildDate>Sun, 29 Jul 2018 17:28:42 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -61,7 +61,7 @@ well. This was integrated with both our original functionality and the url based
     &lt;p&gt;Automated testing mechanism was added for each of the flows as well as utilities such as password change nd user register, with a demo file to run them all at once.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Advanced tests were written so that all the predefined algorithms are also tested with each flow&lt;/p&gt;
+    &lt;p&gt;Advanced tests were written so that all the predefined algorithms are also tested with each flow. Also added a prediction section using the pickle files.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;A loader script was written which transfers the required server files to a new user on the cloud.&lt;/p&gt;
@@ -72,20 +72,69 @@ well. This was integrated with both our original functionality and the url based
 
 &lt;p&gt;This section explains the usage of the setup and how one can check whether it is working fine or not. There are around 6 different flows that one can make use of.&lt;/p&gt;
 
+&lt;h3 id=&quot;register-and-password-change&quot;&gt;Register and password change&lt;/h3&gt;
+
+&lt;p&gt;To register a user (whose public key is stored on the cloud metadata) one can run the register command which has the following structure&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/register.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If a user is already registered, it throws an error. To change the password of an existing user one can run the passwordChange command. Again, the user must have his metadata on the server and also be registered to execute this. The structure of this command is as follows &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/password.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can observe the usage and errors raised in the screenshot :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/usage_register.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;machine-learning-basic&quot;&gt;Machine learning basic&lt;/h3&gt;
+
+&lt;p&gt;The machine learn command is the most basic command and requires the user to write down the model to use, the data matrix. It prompts for a username, password and ip if it is not registered already. The usage can be seen below&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/basic_usage.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/basic_result.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So the dataMat is copied to the server and the attributes are copied back.&lt;/p&gt;
+
+&lt;h3 id=&quot;added-url-functionality&quot;&gt;Added url functionality&lt;/h3&gt;
+
+&lt;p&gt;This command enables you to download the dataset directly onto the server. You need to write down a preprocessing script in this case which outputs the dataset into the required format (see demo). We first need to download the dataset using &lt;code&gt;machineLearnURLDownload(url)&lt;/code&gt; and then use that dataset any number of times using machineLearnURL(modelName, preprocessing)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/url_usage.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can see that the dataset is downloaded on to the server and then the training file is copied back.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/url_result.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;custom-scripting&quot;&gt;Custom scripting&lt;/h3&gt;
+
+&lt;p&gt;This command is to be used when you want to run a custom script on the server. The inputs to this are the script and data. The script is the python script stored with the name (without the extension). More can be understood from the usage screenshots.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/custom_usage.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can observe that the dataset and the custom file are copied (now here instead of a preprocessed dataset, the complete is copied since the user is already writing a script of his own) and then the attributes file is copied back.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/custom_result.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Similar to the URL setup we had for our basic mode, we have it in the custom flavour (with the same download pattern).&lt;/p&gt;
+
+&lt;h3 id=&quot;prediction-mechanism&quot;&gt;Prediction mechanism&lt;/h3&gt;
+
+&lt;p&gt;Once you have one of your pickle files ready from the training mechanism from one of the flows as stated above, you can write down a prediction setup, which gives you the pickle for the predicted target variable. More can be understood from the screenshots.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/prediction_usage.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/prediction_result.png&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;the-toolbox&quot;&gt;The toolbox&lt;/h2&gt;
 
-&lt;p&gt;This repository deals with work done by The Distibuted Red Hen Lab towards classification of different instances of blended classic joint attention in various form of print, audio and video media. For more information visit the &lt;a href=&quot;https://sites.google.com/site/distributedlittleredhen/home/the-cognitive-core-research-topics-in-red-hen/the-barnyard/blended-classic-joint-attention&quot;&gt;Red-Hen Labs&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Detection of number of human faces, possible extensions to their position and orientation. The files use Voila-Jones Haar classifier to detect human frontal and profile faces with the enhancement of template matching. The results can be seen as follows :&lt;/p&gt;
+&lt;p&gt;The complete setup is structured and compiled into a atoms toolbox which can be viewed in the &lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Machine_cloud&quot;&gt;sub-repository&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-standalone-toolbox&quot;&gt;The standalone toolbox&lt;/h2&gt;
 
-&lt;p&gt;A python library like structure to use the accepted algorithm implementations all at one place.
-Which looks something like this :&lt;/p&gt;
+&lt;p&gt;A stand alone toolbox for machine learning in Scilab (with all native code written in Scilab) was also prepared and can be viewed in the &lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Machine_Learning&quot;&gt;sub-repository&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/BCJA.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The repository can be looked upon &lt;a href=&quot;https://github.com/RedHenLab/BlendedJointAttentionClean&quot;&gt;here&lt;/a&gt;. The accepted algorithms were placed on the Case High performance computing cluster. &lt;/p&gt;
+&lt;p&gt;For atoms, it can be downloaded from the &lt;a href=&quot;https://atoms.scilab.org/toolboxes/machine_learning/0.1.0&quot;&gt;scilab page&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;required-packages&quot;&gt;Required Packages:&lt;/h3&gt;
 

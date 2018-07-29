@@ -45,7 +45,7 @@ well. This was integrated with both our original functionality and the url based
 
 * Automated testing mechanism was added for each of the flows as well as utilities such as password change nd user register, with a demo file to run them all at once.
 
-* Advanced tests were written so that all the predefined algorithms are also tested with each flow
+* Advanced tests were written so that all the predefined algorithms are also tested with each flow. Also added a prediction section using the pickle files.
 
 * A loader script was written which transfers the required server files to a new user on the cloud.
 
@@ -53,23 +53,71 @@ well. This was integrated with both our original functionality and the url based
 
 This section explains the usage of the setup and how one can check whether it is working fine or not. There are around 6 different flows that one can make use of.
 
+### Register and password change
 
+To register a user (whose public key is stored on the cloud metadata) one can run the register command which has the following structure
+
+<img src = '{{ site.url }}/img/register.png'>
+
+If a user is already registered, it throws an error. To change the password of an existing user one can run the passwordChange command. Again, the user must have his metadata on the server and also be registered to execute this. The structure of this command is as follows 
+
+<img src = '{{ site.url }}/img/password.png'>
+
+We can observe the usage and errors raised in the screenshot :
+
+<img src = '{{ site.url }}/img/usage_register.png'>
+
+
+### Machine learning basic
+
+The machine learn command is the most basic command and requires the user to write down the model to use, the data matrix. It prompts for a username, password and ip if it is not registered already. The usage can be seen below
+
+<img src = '{{ site.url }}/img/basic_usage.png'>
+
+<img src = '{{ site.url }}/img/basic_result.png'>
+
+So the dataMat is copied to the server and the attributes are copied back.
+
+### Added url functionality
+
+This command enables you to download the dataset directly onto the server. You need to write down a preprocessing script in this case which outputs the dataset into the required format (see demo). We first need to download the dataset using `machineLearnURLDownload(url)` and then use that dataset any number of times using machineLearnURL(modelName, preprocessing)
+
+<img src = '{{ site.url }}/img/url_usage.png'>
+
+We can see that the dataset is downloaded on to the server and then the training file is copied back.
+
+<img src = '{{ site.url }}/img/url_result.png'>
+
+### Custom scripting
+
+This command is to be used when you want to run a custom script on the server. The inputs to this are the script and data. The script is the python script stored with the name (without the extension). More can be understood from the usage screenshots.
+
+<img src = '{{ site.url }}/img/custom_usage.png'>
+
+We can observe that the dataset and the custom file are copied (now here instead of a preprocessed dataset, the complete is copied since the user is already writing a script of his own) and then the attributes file is copied back.
+
+<img src = '{{ site.url }}/img/custom_result.png'>
+
+Similar to the URL setup we had for our basic mode, we have it in the custom flavour (with the same download pattern).
+
+### Prediction mechanism
+
+Once you have one of your pickle files ready from the training mechanism from one of the flows as stated above, you can write down a prediction setup, which gives you the pickle for the predicted target variable. More can be understood from the screenshots.
+
+<img src = '{{ site.url }}/img/prediction_usage.png'>
+
+<img src = '{{ site.url }}/img/prediction_result.png'>
 
 
 ## The toolbox
 
-This repository deals with work done by The Distibuted Red Hen Lab towards classification of different instances of blended classic joint attention in various form of print, audio and video media. For more information visit the [Red-Hen Labs](https://sites.google.com/site/distributedlittleredhen/home/the-cognitive-core-research-topics-in-red-hen/the-barnyard/blended-classic-joint-attention)
-
-Detection of number of human faces, possible extensions to their position and orientation. The files use Voila-Jones Haar classifier to detect human frontal and profile faces with the enhancement of template matching. The results can be seen as follows :
+The complete setup is structured and compiled into a atoms toolbox which can be viewed in the [sub-repository](https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Machine_cloud)
 
 ## The standalone toolbox
 
-A python library like structure to use the accepted algorithm implementations all at one place.
-Which looks something like this :
+A stand alone toolbox for machine learning in Scilab (with all native code written in Scilab) was also prepared and can be viewed in the [sub-repository](https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Machine_Learning)
 
-<img src = '{{ site.url }}/img/BCJA.png'>
-
-The repository can be looked upon [here](https://github.com/RedHenLab/BlendedJointAttentionClean). The accepted algorithms were placed on the Case High performance computing cluster. 
+For atoms, it can be downloaded from the [scilab page](https://atoms.scilab.org/toolboxes/machine_learning/0.1.0)
 
 ### Required Packages:
 
