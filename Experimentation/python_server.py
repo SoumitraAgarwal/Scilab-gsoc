@@ -34,6 +34,7 @@ if(customflag == '0'):
 elif(customflag == '1'):
 	command = open('/home/' + user + '/Scripts/' + modelName + '.py').read().replace('parameters','')
 	print(command)
+	homedir = '/home/' + user
 	f = open(homedir + "/temp.py","w+")
 	f.write(command)
 	f.close()

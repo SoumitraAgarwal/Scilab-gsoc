@@ -1,8 +1,8 @@
 // Demo script for linear regression
 
 getd('../')
-M = csvRead('Salary_Data.csv')
-M(or(isnan(M),'c'),:) = []
+M = csvRead('Salary_Data.csv');
+M(or(isnan(M),'c'),:) = [];
 
 X = M(:, 1)
 y = M(:, 2)

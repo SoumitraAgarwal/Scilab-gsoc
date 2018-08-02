@@ -158,7 +158,7 @@ function status = machineLearnURLDownload(url)
 
 endfunction
 
-function status = machineLearnURL(modelName, preprocessing)
+function status = machineLearnURL(modelName, preprocessing, parameters)
 
 	files 		= listfiles('.')
 	index 		= grep(files, 'username.data')

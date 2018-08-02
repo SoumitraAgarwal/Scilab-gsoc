@@ -954,3 +954,11 @@ Write failed: Broken pipe
 Write failed: Broken pipe
 Write failed: Broken pipe
 Write failed: Broken pipe
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+ssh: connect to host 35.196.55.90 port 22: Connection timed out
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+ssh: connect to host 35.196.55.90 port 22: Connection timed out
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+ssh: connect to host 35.196.55.90 port 22: Connection timed out
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+ssh: connect to host 35.196.55.90 port 22: Connection timed out
