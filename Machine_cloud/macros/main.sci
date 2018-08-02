@@ -10,39 +10,29 @@ pyImport time
 
 function status = passwordChange(username, oldpassword, newpassword, ip, toolbox_basedir)
 	main 	= pyMain()
-	txt 	= mgetl(toolbox_basedir + 'macros/python_change_pass.py')
+	txt 	= mgetl(toolbox_basedir + '/macros/python_change_pass.py')
 	main.opassword 	= oldpassword
 	main.username 	= username
 	main.npassword 	= newpassword
 	main.ip 		= ip
-	main.base 		= toolbox_dir
+	main.base 		= toolbox_basedir
 	pyEvalStr(txt)
 	status 	= 1
 endfunction
 
 function status = register(username, password, ip, toolbox_basedir)
 	main 	= pyMain()
-	txt 	= mgetl(toolbox_basedir + 'macros/python_register.py')
+	txt 	= mgetl(toolbox_basedir + '/macros/python_register.py')
 	main.password 	= password
 	main.user 	 	= username
 	main.ip 		= ip
-	main.base 	= toolbox_dir
+	main.base 	= toolbox_basedir
 	pyEvalStr(txt)
 	status 	= 1
 endfunction
 
-function status = register(username, password, ip, toolbox_dir)
-	main 	= pyMain()
-	txt 	= mgetl(toolbox_dir + 'macros/python_register.py')
-	main.password 	= password
-	main.user 	 	= username
-	main.ip 		= ip
-	pyEvalStr(txt)
-	status 	= 1
-endfunction
-
-function status = loader(key,toolbox_dir)
-	files 		= listfiles(toolbox_dir + '/data/')
+function status = loader(toolbox_basedir)
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
@@ -68,59 +58,62 @@ function status = loader(key,toolbox_dir)
 		mputl(ip,fd);
 		mclose(fd);
 	end
-	txt 		= mgetl(toolbox_dir + '/macros/python_load.py')
+	txt 		= mgetl(toolbox_basedir + '/macros/python_load.py')
 	main 		= pyMain()
-	main.key 	= key 
 	main.user 	= username
 	main.passw 	= password
 	main.ip 	= ip
-	main.base 	= toolbox_dir
+	main.base 	= toolbox_basedir
 	pyEvalStr(txt)
 	status = 1
 endfunction
 
 
-function status = machineLearn(modelName, data, toolbox_dir)
+function status = machineLearn(modelName, data, toolbox_basedir, parameters)
 
-	files 		= listfiles(toolbox_dir + '/data/')
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
 	ip 			= ''
 	if(length(index) == 1)
-		username 	= mgetl(toolbox_dir + '/data/username.data')
-		password 	= mgetl(toolbox_dir + '/data/password.data')
-		ip 			= mgetl(toolbox_dir + '/data/ip.data')
+		username 	= mgetl(toolbox_basedir + '/data/username.data')
+		password 	= mgetl(toolbox_basedir + '/data/password.data')
+		ip 			= mgetl(toolbox_basedir + '/data/ip.data')
 	else
 		username 				= input('User name : ',"string")
 		password 				= input('Password : ',"string")
 		ip 						= input('Cloud ip : ',"string")
 
-		fd = mopen(toolbox_dir + '/data/username.data','wt');
+		fd = mopen(toolbox_basedir + '/data/username.data','wt');
 		mputl(username,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/password.data','wt');
+		fd = mopen(toolbox_basedir + '/data/password.data','wt');
 		mputl(password,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/ip.data','wt');
+		fd = mopen(toolbox_basedir + '/data/ip.data','wt');
 		mputl(ip,fd);
 		mclose(fd);
 	end
-	models 	= mgetl(toolbox_dir + '/macros/models')
+	models 	= mgetl(toolbox_basedir + '/macros/models')
 	index 	= grep(models, modelName)
+	if(length(index) > 1)
+		index = index(1)
+	end
 	if(length(index) == 1)
-		if(strcmp(a(index), modelName) == 0)
+		if(strcmp(models(index), modelName) == 0)
 			fprintfMat('dataMat', data)
-			txt 		= mgetl(toolbox_dir + '/macros/python_local.py')
+			txt 		= mgetl(toolbox_basedir + '/macros/python_local.py')
 			main 		= pyMain()
 			main.script	= modelName
 			main.data 	= 'dataMat'
 			main.user 	= username
 			main.passw 	= password
 			main.ip 	= ip
-			main.base 	= toolbox_dir
+			main.base 	= toolbox_basedir
+			main.parameters = parameters
 			pyEvalStr(txt)
 			status = 1
 		end
@@ -128,88 +121,94 @@ function status = machineLearn(modelName, data, toolbox_dir)
 		disp('No such model. Please check model name.')
 		status = 0
 	end
+	status = 1
 endfunction
 
 
-function status = machineLearnURLDownload(url, toolbox_dir)
+function status = machineLearnURLDownload(url, toolbox_basedir)
 
-	files 		= listfiles(toolbox_dir + '/data/')
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
 	ip 			= ''
 	if(length(index) == 1)
-		username 	= mgetl(toolbox_dir + '/data/username.data')
-		password 	= mgetl(toolbox_dir + '/data/password.data')
-		ip 			= mgetl(toolbox_dir + '/data/ip.data')
+		username 	= mgetl(toolbox_basedir + '/data/username.data')
+		password 	= mgetl(toolbox_basedir + '/data/password.data')
+		ip 			= mgetl(toolbox_basedir + '/data/ip.data')
 	else
 		username 				= input('User name : ',"string")
 		password 				= input('Password : ',"string")
 		ip 						= input('Cloud ip : ',"string")
 
-		fd = mopen(toolbox_dir + '/data/username.data','wt');
+		fd = mopen(toolbox_basedir + '/data/username.data','wt');
 		mputl(username,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/password.data','wt');
+		fd = mopen(toolbox_basedir + '/data/password.data','wt');
 		mputl(password,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/ip.data','wt');
+		fd = mopen(toolbox_basedir + '/data/ip.data','wt');
 		mputl(ip,fd);
 		mclose(fd);
 	end
-	txt 		= mgetl(toolbox_dir + '/macros/python_download.py')
+	txt 		= mgetl(toolbox_basedir + '/macros/python_download.py')
 	main 		= pyMain()
 	main.url 	= url
 	main.user 	= username
 	main.passw 	= password
+	main.base 	= toolbox_basedir
 	main.ip 	= ip
 	pyEvalStr(txt)
 	status = 1
 
 endfunction
 
-function status = machineLearnURL(modelName, preprocessing, toolbox_dir)
+function status = machineLearnURL(modelName, preprocessing, toolbox_basedir, parameters)
 
-	files 		= listfiles(toolbox_dir + '/data/')
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
 	ip 			= ''
 	if(length(index) == 1)
-		username 	= mgetl(toolbox_dir + '/data/username.data')
-		password 	= mgetl(toolbox_dir + '/data/password.data')
-		ip 			= mgetl(toolbox_dir + '/data/ip.data')
+		username 	= mgetl(toolbox_basedir + '/data/username.data')
+		password 	= mgetl(toolbox_basedir + '/data/password.data')
+		ip 			= mgetl(toolbox_basedir + '/data/ip.data')
 	else
 		username 				= input('User name : ',"string")
 		password 				= input('Password : ',"string")
 		ip 						= input('Cloud ip : ',"string")
 
-		fd = mopen(toolbox_dir + '/data/username.data','wt');
+		fd = mopen(toolbox_basedir + '/data/username.data','wt');
 		mputl(username,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/password.data','wt');
+		fd = mopen(toolbox_basedir + '/data/password.data','wt');
 		mputl(password,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/ip.data','wt');
+		fd = mopen(toolbox_basedir + '/data/ip.data','wt');
 		mputl(ip,fd);
 		mclose(fd);
 	end
-	models 	= mgetl(toolbox_dir + '/macros/models')
+	models 	= mgetl(toolbox_basedir + '/macros/models')
 	index 	= grep(models, modelName)
+	if(length(index) > 1)
+		index = index(1)
+	end
 	if(length(index) == 1)
-		if(strcmp(a(index), modelName) == 0)
-			txt 		= mgetl(toolbox_dir + '/macros/python_local_url.py')
+		if(strcmp(models(index), modelName) == 0)
+			txt 		= mgetl(toolbox_basedir + '/macros/python_local_url.py')
 			main 		= pyMain()
 			main.script	= modelName
 			main.prep 	= preprocessing
 			main.user 	= username
 			main.passw 	= password
 			main.ip 	= ip
-			main.base 	= toolbox_dir
+			main.base 	= toolbox_basedir
+			main.parameters = parameters
 			pyEvalStr(txt)
 			status = 1
 		end
@@ -220,123 +219,123 @@ function status = machineLearnURL(modelName, preprocessing, toolbox_dir)
 endfunction
 
 
-function status = machineLearnCustom(script, data, toolbox_dir)
+function status = machineLearnCustom(script, data, toolbox_basedir)
 
-	files 		= listfiles(toolbox_dir + '/data/')
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
 	ip 			= ''
 	if(length(index) == 1)
-		username 	= mgetl(toolbox_dir + '/data/username.data')
-		password 	= mgetl(toolbox_dir + '/data/password.data')
-		ip 			= mgetl(toolbox_dir + '/data/ip.data')
+		username 	= mgetl(toolbox_basedir + '/data/username.data')
+		password 	= mgetl(toolbox_basedir + '/data/password.data')
+		ip 			= mgetl(toolbox_basedir + '/data/ip.data')
 	else
 		username 				= input('User name : ',"string")
 		password 				= input('Password : ',"string")
 		ip 						= input('Cloud ip : ',"string")
 
-		fd = mopen(toolbox_dir + '/data/username.data','wt');
+		fd = mopen(toolbox_basedir + '/data/username.data','wt');
 		mputl(username,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/password.data','wt');
+		fd = mopen(toolbox_basedir + '/data/password.data','wt');
 		mputl(password,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/ip.data','wt');
+		fd = mopen(toolbox_basedir + '/data/ip.data','wt');
 		mputl(ip,fd);
 		mclose(fd);
 	end
-	txt 		= mgetl(toolbox_dir + '/macros/python_local_custom.py')
+	txt 		= mgetl(toolbox_basedir + '/macros/python_local_custom.py')
 	main 		= pyMain()
 	main.script	= script
 	main.data 	= data
 	main.user 	= username
 	main.passw 	= password
 	main.ip 	= ip
-	main.base 	= toolbox_dir
+	main.base 	= toolbox_basedir
 	pyEvalStr(txt)
 	status = 1
 endfunction
 
-function status = machineLearnCustomURL(script, preprocessing, toolbox_dir)
+function status = machineLearnCustomURL(script, preprocessing, toolbox_basedir)
 
-	files 		= listfiles(toolbox_dir + '/data/')
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
 	ip 			= ''
 	if(length(index) == 1)
-		username 	= mgetl(toolbox_dir + '/data/username.data')
-		password 	= mgetl(toolbox_dir + '/data/password.data')
-		ip 			= mgetl(toolbox_dir + '/data/ip.data')
+		username 	= mgetl(toolbox_basedir + '/data/username.data')
+		password 	= mgetl(toolbox_basedir + '/data/password.data')
+		ip 			= mgetl(toolbox_basedir + '/data/ip.data')
 	else
 		username 				= input('User name : ',"string")
 		password 				= input('Password : ',"string")
 		ip 						= input('Cloud ip : ',"string")
 
-		fd = mopen(toolbox_dir + '/data/username.data','wt');
+		fd = mopen(toolbox_basedir + '/data/username.data','wt');
 		mputl(username,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/password.data','wt');
+		fd = mopen(toolbox_basedir + '/data/password.data','wt');
 		mputl(password,fd);
 		mclose(fd);
 
-		fd = mopen(toolbox_dir + '/data/ip.data','wt');
+		fd = mopen(toolbox_basedir + '/data/ip.data','wt');
 		mputl(ip,fd);
 		mclose(fd);
 	end
-	txt 		= mgetl(toolbox_dir + '/macros/python_local_custom_url.py')
+	txt 		= mgetl(toolbox_basedir + '/macros/python_local_custom_url.py')
 	main 		= pyMain()
 	main.script	= script
 	main.prep 	= preprocessing
 	main.user 	= username
 	main.ip 	= ip
 	main.passw 	= password
-	main.base 	= toolbox_dir
+	main.base 	= toolbox_basedir
 	pyEvalStr(txt)
 	status = 1
 endfunction
 
 
-function status = machinePredict(pickle, data, toolbox_dir)
-	files 		= listfiles(toolbox_dir + '/data/')
+function status = machinePredict(pic, data, toolbox_basedir)
+	files 		= listfiles(toolbox_basedir + '/data/')
 	index 		= grep(files, 'username.data')
 	username 	= ''
 	password 	= ''
 	ip 			= ''
 	if(length(index) == 1)
-		username 	= mgetl('username.data')
-		password 	= mgetl('password.data')
-		ip 			= mgetl('ip.data')
+		username 	= mgetl(toolbox_basedir + '/data/username.data')
+		password 	= mgetl(toolbox_basedir + '/data/password.data')
+		ip 			= mgetl(toolbox_basedir + '/data/ip.data')
 	else
 		username 				= input('User name : ',"string")
 		password 				= input('Password : ',"string")
 		ip 						= input('Cloud ip : ',"string")
 
-		fd = mopen('username.data','wt');
+		fd = mopen(toolbox_basedir + '/data/username.data','wt');
 		mputl(username,fd);
 		mclose(fd);
 
-		fd = mopen('password.data','wt');
+		fd = mopen(toolbox_basedir + '/data/password.data','wt');
 		mputl(password,fd);
 		mclose(fd);
 
-		fd = mopen('ip.data','wt');
+		fd = mopen(toolbox_basedir + '/data/ip.data','wt');
 		mputl(ip,fd);
 		mclose(fd);
 	end
 	fprintfMat('dataMat', data)
-	txt 		= mgetl(toolbox_dir + '/macros/python_local_predict.py')
+	txt 		= mgetl(toolbox_basedir + '/macros/python_local_predict.py')
 	main 		= pyMain()
 	main.data 	= data
 	main.user 	= username
 	main.passw 	= password
 	main.ip 	= ip
-	main.model 	= pickle
-	main.base 	= toolbox_dir
+	main.model 	= pic
+	main.base 	= toolbox_basedir
 	pyEvalStr(txt)
 	status 		= 1
 endfunction

@@ -12,28 +12,28 @@ if(status == passw):
 	# Copy the kernel file
 	# # Get the list of kernel files
 
-	f 	= open(base + "/copy_commands.sh","w+")
+	f 	= open(base + "/macros/copy_commands.sh","w+")
 	f.write('ls')
 	f.close()
-	files 	= os.popen('cat ' + base + '/copy_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip).readlines()
+	files 	= os.popen('cat ' + base + '/macros/copy_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip).readlines()
 	# print('Copying ' + files[-1])
 
 	files 	= [file.rstrip('\r\n') for file in files]
 	
 	if('Scripts' not in files):
 		print('Copying pre-built scripts')
-		os.system('scp -r ~/.ssh/id_rsa ' + base + '/loader/Scripts/ ' +  user + '@' + ip + ':~/')
+		os.system('scp -r ~/.ssh/id_rsa ' + base + '/macros/loader/Scripts/ ' +  user + '@' + ip + ':~/')
 
 	if('python_server.py' not in files):
 		print('Copying server runner')
-		os.system('scp -i ~/.ssh/id_rsa ' + base + '/loader/python_server.py ' +  user + '@' + ip + ':~/python_server.py')
+		os.system('scp -i ~/.ssh/id_rsa ' + base + '/macros/loader/python_server.py ' +  user + '@' + ip + ':~/python_server.py')
 
 	if('anaconda3' not in files):
 		print('Installing anaconda on the server')
-		os.popen('cat ' + base + '/load_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip)
+		os.popen('cat ' + base + '/macros/load_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip)
 
 	if('Shared' not in files):
-		os.popen('cat ' + base + '/load_commands_mkdir.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip)
+		os.popen('cat ' + base + '/macros/load_commands_mkdir.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip)
 
 	# os.system('scp -i ~/.ssh/id_rsa dataMat ' + user + '@' + ip + ':~/Working/data')
 

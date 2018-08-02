@@ -5,7 +5,7 @@ from shutil import copyfile
 
 
 f 	= open(base + "/macros/init.py","w+")
-f.write('import os\nos.system(\'cat ' + base + 'macros/init_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip + '\')')
+f.write('import os\nos.system(\'cat ' + base + '/macros/init_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip + '\')')
 f.close()
 # For copying files from local machine to remote server/machine
 subprocess.Popen(["nohup", "python", base + "/macros/init.py"])
@@ -34,7 +34,7 @@ if(status == passw):
 	# # Path of the kernel connection file
 	cf 	= file
 	f 	= open(base + "/macros/server_commands.sh","w+")
-	f.write('export PATH="/home/' + user + '/anaconda3/bin:$PATH"\npython python_server.py ' + cf + ' ' + script)
+	f.write('export PATH="/home/' + user + '/anaconda3/bin:$PATH"\npython python_server.py ' + cf + ' ' + script + ' ' + user + ' 0 ' + parameters)
 	f.close()
 	os.popen('cat ' + base + '/macros/server_commands.sh|ssh -i ~/.ssh/id_rsa ' + user + '@' + ip)
 	os.system('scp -i ~/.ssh/id_rsa ' + user + '@' + ip + ':~/attributes.p .')

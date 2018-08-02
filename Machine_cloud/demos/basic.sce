@@ -1,9 +1,16 @@
 // Demo script
 
-data 	 				= input('Name of processed dataset : ',"string")
-algorithm 				= input('Algorithm to run : ',"string")
-toolbox_basedir 		= input('Base directory for toolbox : ', "string")
+M = csvRead('Salary_Data.csv')
+M(or(isnan(M),'c'),:) = []
+
+data 					= M
+algorithm 				= 'linear_regression'
+parameters 				= ''
+
+chdir('..')
+toolbox_basedir 		= pwd()
+chdir('tests')
 
 getd(toolbox_basedir + '/macros')
 
-machineLearn(algorithm, data, toolbox_basedir);
+machineLearn(algorithm, data, toolbox_basedir, parameters)

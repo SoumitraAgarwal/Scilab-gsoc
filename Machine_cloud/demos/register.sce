@@ -1,9 +1,12 @@
 // Demo script for linear regression
 
-username 				= input('User name : ',"string")
-password 				= input('Password : ',"string")
-ip 						= input('Cloud ip : ',"string")
-toolbox_basedir 		= input('Base directory for toolbox : ', "string")
+username 				= 'soumitra'
+password 				= 'abc123'
+ip 						= '35.237.174.190'
+
+chdir('..')
+toolbox_basedir 		= pwd()
+chdir('tests')
 
 getd(toolbox_basedir + '/macros')
 

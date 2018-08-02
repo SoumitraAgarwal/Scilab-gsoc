@@ -1,4 +1,4 @@
-# Simple Linear Regression
+# Simple Linear Regression custom script
 # Importing the libraries
 import numpy as np
 import pandas as pd

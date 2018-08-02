@@ -1,10 +1,16 @@
 // Demo script
 
-data_url 				= input('URL for the dataset : ',"string")
-algorithm 				= input('Algorithm to run : ',"string")
-preprocessing_script 	= input('Preprocessing script : ',"string")
-toolbox_basedir 		= input('Base directory for toolbox : ', "string")
+url 				= 'https://raw.githubusercontent.com/franklinwillemen/Machine_Learning/master/Regression/Simple_Linear_Regression/Salary_Data.csv'
+
+algorithm 				= 'linear_regression'
+preprocessing_script 	= 'preprocessing.py'
+parameters 				= ''
+
+chdir('..')
+toolbox_basedir 		= pwd()
+chdir('tests')
 
 getd(toolbox_basedir + '/macros')
 
-machineLearnURL(algorithm, data_url, preprocessing_script, toolbox_basedir);
+machineLearnURLDownload(url, toolbox_basedir)
+machineLearnURL(algorithm, preprocessing_script, toolbox_basedir, parameters);
