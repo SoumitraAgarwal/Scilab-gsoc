@@ -6,19 +6,43 @@ Description
 
 This toolbox has a collection off functions that help you register and use pre-written python scripts or your custom machine learning scripts on the cloud. It work after installing some pre-requisite scripts onto your user on the server, adding your key to the metadata for the server and installing the dependencies (PIMS) onto your machine. One can then use the cloud for a machine lerning experience on the fly. The pre-installed scripts are :
 
-decision_tree_classification.py
-decision_tree_regression.py
-heirarchial_clustering.py
-kmeans_clustering.py
-knn_classification.py
-linear_regression.py
-logistic_regression.py
-multiple_linear_regression.py
-naive_bayes_GaussianNB.py
-naive_bayes_MultinomialNB.py
-principal_component_analysis.py
-random_forest_classification.py
-support_vector_regression.py
+binarize
+decision_tree_classification
+decision_tree_regression
+function_transform
+heirarchial_clustering
+impute
+incremental_PCA
+kernel_PCA
+kmeans_clustering
+knn_classification
+lass_LARS
+lasso_regression
+linear_regression
+logistic_regression
+min_max_scale
+multiple_linear_regression
+naive_bayes_GaussianNB
+naive_bayes_MultinomialNB
+nearest_centroid
+nearest_neighbours
+normalize
+one_hot_encode
+PCA
+polynomial_features
+preceptron_learning
+predictor
+principal_component_analysis
+quantile_transform
+random_forest_classification
+ridge_bayesian
+ridge_cross_validation
+ridge_regression
+scale
+stochastic_gradient_descent
+support_vector_classification
+support_vector_linear_svc
+support_vector_regression
 
 Each of these scripts has a pre-defined data format that you need to give as input, and a pre-defined output format which is saved as attributes.p onto your local machine.
 
@@ -52,50 +76,40 @@ The following section describes the usage of each function in the main macro in 
 
 ------------------------------------
 
-3. machineLearn(modelName, data, username, ip, password, toolbox_dir)
+3. machineLearn(modelName, data, toolbox_basedir, parameters)
 
 The machine learn command is the most basic command and requires the user to write down the
-model to use, the data matrix in the required form and the username, ip and password.
+model to use, the data matrix in the required form and the parameters
 
 	- input modelName is the name of the pre-defined model you want to train (refer server scripts)
 	- input data is a data matrix in the pre-defined format
-	- input username is your username on the server machine
-	- input password is your password you used at time of registeration (or changed hence)
-	- input ip is the server ip
 	- input toolbox_dir is the directory of the toolbox
+	- input parameters is the set of parameters given to the scikit learn function in string
 
 	- output is the status of your training with the attributes file copied to your runtime directory
 
 ------------------------------------
 
-4. machineLearnURL(modelName, url, preprocessing, username, ip, password, toolbox_dir)
+4. machineLearnURL(modelName, preprocessing, toolbox_basedir, parameters)
 
-This command enables you to download the dataset directly onto the server. You need to write down
-a preprocessing script in this case which outputs the dataset into the required format
+This command enables you to download the dataset directly onto the server. You need to write down a preprocessing script in this case which outputs the dataset into the required format
 
 	- input modelName is the name of the pre-defined model you want to train (refer server scripts)
-	- input url is a url of your dataset
 	- input preprocessing is the name of the script that converts the ddataset into the pre-defined format
-	- input username is your username on the server machine
-	- input password is your password you used at time of registeration (or changed hence)
-	- input ip is the server ip
 	- input toolbox_dir is the directory of the toolbox
+	- input parameters is the set of parameters given to the scikit learn function in string
 
 	- output is the status of your training with the attributes file copied to your runtime directory
 
+(make sure you have downloaded the dataset using 7. machineLearnURLDownload())
 ------------------------------------
 
 5. machineLearnCustom(script, data, username, ip, password, toolbox_dir)
 
-This command is to be used when you want to run a custom script on the server. The inputs to this
-are the script, data, username, ip, password. The script is the python script stored with the name
-(without the extension).
+This command is to be used when you want to run a custom script on the server. The inputs to this are the script, data and the toolbox_dir. The script is the python script stored with the name (without the extension).
 
 	- input script is the name of the script you want to train (refer server scripts)
 	- input data is a the name of your dataset
-	- input username is your username on the server machine
-	- input password is your password you used at time of registeration (or changed hence)
-	- input ip is the server ip
 	- input toolbox_dir is the directory of the toolbox
 
 	- output is the status of your training with the attributes file copied to your runtime directory
@@ -105,20 +119,49 @@ are the script, data, username, ip, password. The script is the python script st
 
 6. machineLearnCustomURL(script, url, preprocessing, username, ip, password, toolbox_dir)
 
-This command is the equivalent of machineLearnURL with a custom script in place. The inputs are the
-custom script, data url, preprocessing script, userrname, ip, password.
+This command is the equivalent of machineLearnURL with a custom script in place. The inputs are the custom script, preprocessing script and the toolbox_dir.
 
 	- input script is the name of the script you want to train (refer server scripts)
-	- input url is a url of your dataset
 	- input preprocessing is the name of the script that converts the ddataset into the pre-defined format
-	- input username is your username on the server machine
-	- input password is your password you used at time of registeration (or changed hence)
-	- input ip is the server ip
 	- input toolbox_dir is the directory of the toolbox
 
 	- output is the status of your training with the attributes file copied to your runtime directory
 
+(make sure you have downloaded the dataset using 7. machineLearnURLDownload())
+
 ------------------------------------
+
+7. machineLearnURLDownload(url, toolbox_basedir)
+
+This command is used to download a dataset onto the server which is later used in 4, 6. The inputs are the url and the toolbox_dir.
+
+	- input url is the url where the data is saved
+	- input toolbox_dir is the directory of the toolbox
+
+	- output is the status of the download
+
+------------------------------------
+
+8. loader(toolbox_basedir)
+
+This command, essentially a utility command is used on initialization. This loads all the required scripts onto the server with other reuqired flow scripts.
+
+	- input toolbox_dir is the directory of the toolbox
+
+	- output is the status of the load
+
+------------------------------------
+
+9. machinePredict(pic, data, toolbox_basedir)
+
+This command is used to test a model on a feature set or get the prediction. The inputs are pic, data and toolbox_basedir.
+
+	- input pic is the name of the pickle file created using the training functions
+	- input data is the packed feature set
+	- input toolbox_basedirdir is the directory of the toolbox
+
+	- output is the status of the prediction
+
 ====================================
 
 Server scripts
@@ -128,237 +171,46 @@ Each of the following bullets defines the input format to the pre-defined script
 
 ------------------------------------
 
-1. decision_tree_classification.py
+- The input to each learning file is the dataset packed in (X,y) format where X is the feature set and y is the target
+- The input to each of the preprocessing script is just X
 
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- predicted y value of a test split
-	- confusion matrix
-	- classifier feature importances 
-	- classifier classes 
-	- classifier max features 
-	- classifier n features
-	- classifier n classes 
-	- classifier n_outputs
-	- classifier tree
-
-(refer sklearn documentation for usage)
-
-------------------------------------
-
-2. decision_tree_regression.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- predicted y value of a test split
-	- confusion matrix
-	- regressor feature importances 
-	- regressor classes 
-	- regressor max features 
-	- regressor n features
-	- regressor n classes 
-	- regressor n_outputs
-	- regressor tree
+- The output of each of the learning script is a pickle file which has the model (completed using the fit/fit_transform function)
+- The output of each of the preprocessing script is a pickle file with the processed dataset as instructed
 
 (refer sklearn documentation for usage)
 ------------------------------------
+====================================
 
-3. heirarchial_clustering.py
-	
-	Input format : 
+Examples
 
-	- The complete matrix represents the feature matrix X
+Linear regression from scratch using the cloud mechanism
+-------------------------
 
-	Attributes file :
+M = csvRead(<Name of your dataset>)
+M(or(isnan(M),'c'),:) = []
 
-	The attributes file is a list of the following in order :
+data 					= M
+toolbox_basedir 		= <Toolbox directory>
+model_name 				= <Name of the server model> (like 'linear_regression' here)
+parameters 				= <Set of parameters> (like 'fit_intercept=False')
 
-	- predicted y value of a test split
-	- heirarchial labels
-	- heirarchial  n leaver
-	- heirarchial n components
+machineLearn(model_name, data, toolbox_basedir, parameters)
 
-(refer sklearn documentation for usage)
-------------------------------------
-4. kmeans_clustering.py
+----------------------------------
 
-	Input format : 
+PCA from scratch using the cloud machanism
+----------------------------------
 
-	- The complete matrix represents the feature matrix X
+M = csvRead(<Name of your dataset>)
+M(or(isnan(M),'c'),:) = []
 
-	Attributes file :
+X 						= M(:,<column range for features>)
+data 					= X
+toolbox_basedir 		= <Toolbox directory>
+model_name 				= <Name of the server model> (like 'PCA' here)
+parameters 				= <Set of parameters> (like 'n_components=5, copy=False')
 
-	The attributes file is a list of the following in order :
+machineLearn(model_name, data, toolbox_basedir, parameters)
+----------------------------------
 
-	- predicted y value of a test split
-	- kmeans centres
-	- kmeans inertia
-
-(refer sklearn documentation for usage)
-------------------------------------
-5. knn_classification.py
-	
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	- The classifier (use classifier.predict in python later)
-
-------------------------------------
-6. linear_regression.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- predicted y value of a test split
-	- confusion matrix
-	- regressor feature importances 
-	- regressor classes 
-	- regressor max features 
-	- regressor n features
-	- regressor n classes 
-	- regressor n_outputs
-	- regressor tree
-
-(refer sklearn documentation for usage)
-------------------------------------
-7. logistic_regression.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- predicted y value of a test split
-	- regressor coefficient
-	- regressor intercept
-	- regressor iterations
-
-(refer sklearn documentation for usage)
-------------------------------------
-8. multiple_linear_regression.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- predicted y value of a test split
-	- regressor coefficient
-	- regressor residues
-	- regressor intercept
-
-(refer sklearn documentation for usage)
-------------------------------------
-9. naive_bayes_GaussianNB.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- predicted y value of a test split
-	- confusion matrix
-	- prior
-	- count
-	- theta
-	- sigma
-
-(refer sklearn documentation for usage)
-------------------------------------
-10. naive_bayes_MultinomialNB.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- model (use model.predict)
-
-(refer sklearn documentation for usage)
-------------------------------------
-11. principal_component_analysis.py
-
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- model
-
-(refer sklearn documentation for usage)
-------------------------------------
-12. random_forest_classification.py
-
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- classifier (use classifier.predict)
-
-------------------------------------
-13. support_vector_regression.py
-
-	Input format : 
-
-	- Last but one colums represent the feature matrix X
-	- Last column represents the target Y
-
-	Attributes file :
-
-	The attributes file is a list of the following in order :
-
-	- model (use model.predict)
-
-(refer sklearn documentation for usage)
-------------------------------------
+These examples store the required pickle file in the same directory as the script
