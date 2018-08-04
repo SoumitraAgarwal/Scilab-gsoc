@@ -214,3 +214,15 @@ machineLearn(model_name, data, toolbox_basedir, parameters)
 ----------------------------------
 
 These examples store the required pickle file in the same directory as the script
+
+======================================
+
+One can run this toolbox on any cloud computing suite as long as the following steps are followed prior to it:
+
+1. Install anaconda on the server (or alternatively numpy, pandas and scikit-learn)
+2. Add the public key to the metadata of the server
+3. Run the loader function (as stated above)
+4. Run the register function 
+
+This was tested on a Google Cloud Platform machine
+---------------------------------------
