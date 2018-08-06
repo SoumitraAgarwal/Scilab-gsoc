@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>The machine learning cloud</title>
-  <meta name="description" content=" Exxperimentation :  Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was ...">
+  <meta name="description" content=" Experimentation :  Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was ...">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="http://0.0.0.0:4000//css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://0.0.0.0:4000//css/main.css">
+  <link rel="stylesheet" href="http://0.0.0.0:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://0.0.0.0:4000/css/main.css">
 
-  <link rel="canonical" href="http://0.0.0.0:4000//articles/2018-07/Coding-period(First)">
-  <link rel="alternate" type="application/rss+xml" title="Machine learning among other thigns" href="http://0.0.0.0:4000/ /feed.xml " />
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/2018-07/Coding-period(First)">
+  <link rel="alternate" type="application/rss+xml" title="Machine learning among other things" href="http://0.0.0.0:4000 /feed.xml " />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="http://0.0.0.0:4000//favicon.ico">
+  <link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="http://0.0.0.0:4000//favicon.png">
+  <link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
 </head>
 
 
@@ -32,9 +32,9 @@
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="http://0.0.0.0:4000//img/d.jpg" alt="" class="avatar">
+  <img src="http://0.0.0.0:4000/img/d.jpg" alt="" class="avatar">
   
-  <a href="http://0.0.0.0:4000//" class="author_name">Soumitra Agarwal</a>
+  <a href="http://0.0.0.0:4000/" class="author_name">Soumitra Agarwal</a>
   <span class="author_job">Open source fan boy, Aspiring data scientist</span>
   <span class="author_bio mbm">In and out of Machine learning in Scilab</span>
   <!-- <span class="site_desc mbm">The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</span> -->
@@ -42,17 +42,17 @@
     <ul class="nav-list">
        
       <li class="nav-item">
-        <a href="http://0.0.0.0:4000//archive/">Archive</a>
+        <a href="http://0.0.0.0:4000/archive/">Archive</a>
         <span>/</span>
       </li>
             
       <li class="nav-item">
-        <a href="http://0.0.0.0:4000//categories/">Categories</a>
+        <a href="http://0.0.0.0:4000/categories/">Categories</a>
         <span>/</span>
       </li>
           
       <li class="nav-item">
-        <a href="http://0.0.0.0:4000//tags/">Tags</a>
+        <a href="http://0.0.0.0:4000/tags/">Tags</a>
       </li>
        
     </ul>
@@ -88,7 +88,7 @@
     </div>
     <div class="col s12 m9">
       <div class="post-listing">
-        <a class="btn" href= "http://0.0.0.0:4000//" >
+        <a class="btn" href= "http://0.0.0.0:4000/" >
   Home
 </a>
 
@@ -118,7 +118,7 @@
 
 <p>Coming towards the second half of the <code>Google Summer of Code</code> period, an experimentation setup was planned. This was exactly what comes under exploring uncharted territories. We were planning to create a machine learning architecture integrated with an easy to use cloud based interface. It turned out to be much more. With the help of the present toolbox, one can use a predefined set of algorithms (which basically emulate the scikit-learn api for python) and can run their custom script with effect of a single function. </p>
 
-<p>In this blog post, you get a free tour of how the work progressedd and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the <a href="https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation">github sub-repository</a>.</p>
+<p>In this blog post, you get a free tour of how the work progressed and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the <a href="https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation">github sub-repository</a>.</p>
 
 <h2 id="work-updates">Work updates</h2>
 
@@ -179,23 +179,23 @@ well. This was integrated with both our original functionality and the url based
 
 <p>To register a user (whose public key is stored on the cloud metadata) one can run the register command which has the following structure</p>
 
-<p><img src="http://0.0.0.0:4000//img/register.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/register.png" /></p>
 
 <p>If a user is already registered, it throws an error. To change the password of an existing user one can run the passwordChange command. Again, the user must have his metadata on the server and also be registered to execute this. The structure of this command is as follows </p>
 
-<p><img src="http://0.0.0.0:4000//img/password.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/password.png" /></p>
 
 <p>We can observe the usage and errors raised in the screenshot :</p>
 
-<p><img src="http://0.0.0.0:4000//img/usage_register.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/usage_register.png" /></p>
 
 <h3 id="machine-learning-basic">Machine learning basic</h3>
 
 <p>The machine learn command is the most basic command and requires the user to write down the model to use, the data matrix. It prompts for a username, password and ip if it is not registered already. The usage can be seen below</p>
 
-<p><img src="http://0.0.0.0:4000//img/basic_usage.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/basic_usage.png" /></p>
 
-<p><img src="http://0.0.0.0:4000//img/basic_result.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/basic_result.png" /></p>
 
 <p>So the dataMat is copied to the server and the attributes are copied back.</p>
 
@@ -203,21 +203,21 @@ well. This was integrated with both our original functionality and the url based
 
 <p>This command enables you to download the dataset directly onto the server. You need to write down a preprocessing script in this case which outputs the dataset into the required format (see demo). We first need to download the dataset using <code>machineLearnURLDownload(url)</code> and then use that dataset any number of times using machineLearnURL(modelName, preprocessing)</p>
 
-<p><img src="http://0.0.0.0:4000//img/url_usage.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/url_usage.png" /></p>
 
 <p>We can see that the dataset is downloaded on to the server and then the training file is copied back.</p>
 
-<p><img src="http://0.0.0.0:4000//img/url_result.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/url_result.png" /></p>
 
 <h3 id="custom-scripting">Custom scripting</h3>
 
 <p>This command is to be used when you want to run a custom script on the server. The inputs to this are the script and data. The script is the python script stored with the name (without the extension). More can be understood from the usage screenshots.</p>
 
-<p><img src="http://0.0.0.0:4000//img/custom_usage.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/custom_usage.png" /></p>
 
 <p>We can observe that the dataset and the custom file are copied (now here instead of a preprocessed dataset, the complete is copied since the user is already writing a script of his own) and then the attributes file is copied back.</p>
 
-<p><img src="http://0.0.0.0:4000//img/custom_result.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/custom_result.png" /></p>
 
 <p>Similar to the URL setup we had for our basic mode, we have it in the custom flavour (with the same download pattern).</p>
 
@@ -225,9 +225,9 @@ well. This was integrated with both our original functionality and the url based
 
 <p>Once you have one of your pickle files ready from the training mechanism from one of the flows as stated above, you can write down a prediction setup, which gives you the pickle for the predicted target variable. More can be understood from the screenshots.</p>
 
-<p><img src="http://0.0.0.0:4000//img/prediction_usage.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/prediction_usage.png" /></p>
 
-<p><img src="http://0.0.0.0:4000//img/prediction_result.png" /></p>
+<p><img src="http://0.0.0.0:4000/img/prediction_result.png" /></p>
 
 <h2 id="the-toolbox">The toolbox</h2>
 
@@ -263,19 +263,19 @@ well. This was integrated with both our original functionality and the url based
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://0.0.0.0:4000/articles/2018-07/Coding-period(First)" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/2018-07/Coding-period(First)" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/2018-07/Coding-period(First)" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://0.0.0.0:4000/articles/2018-07/Coding-period(First)" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://0.0.0.0:4000//articles/2018-07/Coding-period(First)" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://0.0.0.0:4000/articles/2018-07/Coding-period(First)" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div><!-- end share-buttons -->
@@ -289,8 +289,8 @@ well. This was integrated with both our original functionality and the url based
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="http://0.0.0.0:4000//js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="http://0.0.0.0:4000//js/main.js"></script>
+  <script type="text/javascript" src="http://0.0.0.0:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://0.0.0.0:4000/js/main.js"></script>
 
 
 </body>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 	The machine learning cloud
-excerpt: "<b> Exxperimentation : </b> Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was ..."
+excerpt: "<b> Experimentation : </b> Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was ..."
 categories: [Coding period]
 comments: true
 ---
@@ -10,7 +10,7 @@ comments: true
 
 Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was planned. This was exactly what comes under exploring uncharted territories. We were planning to create a machine learning architecture integrated with an easy to use cloud based interface. It turned out to be much more. With the help of the present toolbox, one can use a predefined set of algorithms (which basically emulate the scikit-learn api for python) and can run their custom script with effect of a single function. 
 
-In this blog post, you get a free tour of how the work progressedd and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the [github sub-repository](https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation).
+In this blog post, you get a free tour of how the work progressed and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the [github sub-repository](https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation).
 
 ## Work updates
 

@@ -1,13 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine learning among other thigns</title>
+    <title>Machine learning among other things</title>
     <description>The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</description>
-    <link>http://0.0.0.0:4000//</link>
-    <atom:link href="http://0.0.0.0:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Jul 2018 17:28:42 +0530</pubDate>
-    <lastBuildDate>Sun, 29 Jul 2018 17:28:42 +0530</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 06 Aug 2018 16:36:16 +0530</pubDate>
+    <lastBuildDate>Mon, 06 Aug 2018 16:36:16 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>The machine learning standalone toolbox</title>
+        <description>&lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;The first half of the project was an effort to understand the functioning of Scilab and contributing something essential at the same time. This was done by creating a standalone machine learning toolbox for Scilab with all codes written in pure Scilab. This included undestanding the underlying concepts of different machine learning techniques and also, how Scilab function&lt;/p&gt;
+
+&lt;p&gt;In this blog post, I would guide you through the ups and downs, the highs and lows of what came to be known as &lt;code&gt;Machine_Learning&lt;/code&gt; to all the users of Atoms. All of the updates and code can be veiwed on the &lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Development&quot;&gt;github sub-repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;work-progress&quot;&gt;Work progress&lt;/h2&gt;
+
+&lt;p&gt;The daily work updates for this toolbox as well as the other toolbox (cloud based) are available on the &lt;a href=&quot;https://wiki.scilab.org/agarwalsoumitra1504%40gmail.com/Daily%20reports%20for%20Machine%20learning%20features%20in%20Scilab#preview&quot;&gt;scilab-wiki&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;The usage would be explained via a series of screenshots. These are a postcursor to instlalling the toolbox and loading it. We would view one preprocessing (1-hot-encode) and one
+algorithm (affinity clustering) for the demo.&lt;/p&gt;
+
+&lt;h3 id=&quot;hot-encoding&quot;&gt;1 hot encoding&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/hot_usage.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This can be viewed in the readme file for the toolbox. Thus we prepare a vector of strings from one of our datasets for the demo and then remove blanks. Then we proceed with the usage of the
+toolbox with the commands hotEncode. Just for the sake of the demo, we list out the datasets in the demos for the toolbox and then read the titanic dataset using the read_csv command&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/hot_data.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then we select column 12. We remove any blank fields from the column. Then we run the
+hotEncode command which according to the readme returns the categories and encode variables.
+The category variable represents the different classes in the column and encode gives us the
+required encoding.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/hot_result.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;affinity-cluster&quot;&gt;Affinity cluster&lt;/h3&gt;
+
+&lt;p&gt;We now read the dataset as shown earlier and both the columns are then scaled (it is known to give better results though , not necessary to do it).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/affinity_data.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can see from the readme.txt file that this requires three inputs - the data, the number of
+proposed centres and the number of iterations for convergence. We use 3 centres and 4 iterations&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/affinity_usage.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We use the function affinityCluster(x, 3, 4) which results in a set for flags. We run unique/tabul flags to see the distribution of assignment.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/affinity_result.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can then plot these flag values with our original data to get the following plot&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/Affinity.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
+
+&lt;p&gt;A seperate file for testing each of the given algorithms was written. To test them out yourself you can wander into the tests directory in the toolbox to the following view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/Test_dir.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One can run the &lt;code&gt;RunDemos.sce&lt;/code&gt; using Scilab. It proceeds to run all the macros in your demos directory (which boils down to 41 machine learning test over all the macros) and keeps you updated &lt;img class=&quot;emoji&quot; title=&quot;:grin:&quot; alt=&quot;:grin:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f601.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;. Here are some of the highlights&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/Test_start.png&quot; /&gt;
+&lt;img src=&quot;http://0.0.0.0:4000/img/Test_mid.png&quot; /&gt;
+&lt;img src=&quot;http://0.0.0.0:4000/img/Test_mid_2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;useful-links&quot;&gt;Useful links:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc&quot;&gt;Github repository main&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://atoms.scilab.org/toolboxes/machine_learning/0.1.0&quot;&gt;Atoms link to toolbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;Authors:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal&quot; target=&quot;_blank&quot;&gt;Soumitra Agarwal&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:neckbeard:&quot; alt=&quot;:neckbeard:&quot; src=&quot;https://assets.github.com/images/icons/emoji/neckbeard.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>Sun, 29 Jul 2018 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/articles/2018-07/Coding-period(Second)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/2018-07/Coding-period(Second)</guid>
+        
+        
+        <category>coding period</category>
+        
+      </item>
     
       <item>
         <title>The machine learning cloud</title>
@@ -15,7 +104,7 @@
 
 &lt;p&gt;Coming towards the second half of the &lt;code&gt;Google Summer of Code&lt;/code&gt; period, an experimentation setup was planned. This was exactly what comes under exploring uncharted territories. We were planning to create a machine learning architecture integrated with an easy to use cloud based interface. It turned out to be much more. With the help of the present toolbox, one can use a predefined set of algorithms (which basically emulate the scikit-learn api for python) and can run their custom script with effect of a single function. &lt;/p&gt;
 
-&lt;p&gt;In this blog post, you get a free tour of how the work progressedd and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the &lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation&quot;&gt;github sub-repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this blog post, you get a free tour of how the work progressed and how new ideas shaped up what is now the machine learning cloud setup for scilab. All of the updates and code can be veiwed on the &lt;a href=&quot;https://github.com/SoumitraAgarwal/Scilab-gsoc/tree/master/Experimentation&quot;&gt;github sub-repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;work-updates&quot;&gt;Work updates&lt;/h2&gt;
 
@@ -76,23 +165,23 @@ well. This was integrated with both our original functionality and the url based
 
 &lt;p&gt;To register a user (whose public key is stored on the cloud metadata) one can run the register command which has the following structure&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/register.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/register.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If a user is already registered, it throws an error. To change the password of an existing user one can run the passwordChange command. Again, the user must have his metadata on the server and also be registered to execute this. The structure of this command is as follows &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/password.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/password.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can observe the usage and errors raised in the screenshot :&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/usage_register.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/usage_register.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;machine-learning-basic&quot;&gt;Machine learning basic&lt;/h3&gt;
 
 &lt;p&gt;The machine learn command is the most basic command and requires the user to write down the model to use, the data matrix. It prompts for a username, password and ip if it is not registered already. The usage can be seen below&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/basic_usage.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/basic_usage.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/basic_result.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/basic_result.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So the dataMat is copied to the server and the attributes are copied back.&lt;/p&gt;
 
@@ -100,21 +189,21 @@ well. This was integrated with both our original functionality and the url based
 
 &lt;p&gt;This command enables you to download the dataset directly onto the server. You need to write down a preprocessing script in this case which outputs the dataset into the required format (see demo). We first need to download the dataset using &lt;code&gt;machineLearnURLDownload(url)&lt;/code&gt; and then use that dataset any number of times using machineLearnURL(modelName, preprocessing)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/url_usage.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/url_usage.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can see that the dataset is downloaded on to the server and then the training file is copied back.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/url_result.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/url_result.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;custom-scripting&quot;&gt;Custom scripting&lt;/h3&gt;
 
 &lt;p&gt;This command is to be used when you want to run a custom script on the server. The inputs to this are the script and data. The script is the python script stored with the name (without the extension). More can be understood from the usage screenshots.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/custom_usage.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/custom_usage.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We can observe that the dataset and the custom file are copied (now here instead of a preprocessed dataset, the complete is copied since the user is already writing a script of his own) and then the attributes file is copied back.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/custom_result.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/custom_result.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Similar to the URL setup we had for our basic mode, we have it in the custom flavour (with the same download pattern).&lt;/p&gt;
 
@@ -122,9 +211,9 @@ well. This was integrated with both our original functionality and the url based
 
 &lt;p&gt;Once you have one of your pickle files ready from the training mechanism from one of the flows as stated above, you can write down a prediction setup, which gives you the pickle for the predicted target variable. More can be understood from the screenshots.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/prediction_usage.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/prediction_usage.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000//img/prediction_result.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/prediction_result.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;the-toolbox&quot;&gt;The toolbox&lt;/h2&gt;
 
@@ -154,11 +243,73 @@ well. This was integrated with both our original functionality and the url based
 
 </description>
         <pubDate>Sun, 29 Jul 2018 00:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000//articles/2018-07/Coding-period(First)</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//articles/2018-07/Coding-period(First)</guid>
+        <link>http://0.0.0.0:4000/articles/2018-07/Coding-period(First)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/2018-07/Coding-period(First)</guid>
         
         
         <category>coding period</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to the jungle</title>
+        <description>&lt;h2 id=&quot;before-the-project&quot;&gt;Before the project&lt;/h2&gt;
+
+&lt;p&gt;Organisations already announced, people already done with their proposals, while I was here, still searching for my best match. The recipe was simple. A blend on machine learning and mathematical research with a dash of software development. I was hoping for too much maybe, until this&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/intro_1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the odds against me, I was never leaving this opportunity. So I penned down a proposal. A few ideas swept my way and after scrolling through lots of memes, I had &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/intro_2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Apparently the selection committee shared the sense of humour. So after a week’s worth of effort, we made it&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/intro_3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then came the tough part. Doing what you have proposed. The good thing is, google spares a month to settle into it. &lt;/p&gt;
+
+&lt;h2 id=&quot;community-bonding-period&quot;&gt;Community bonding period&lt;/h2&gt;
+
+&lt;p&gt;Having been a GSoC’er earlier, I knew that this period was probably the one most people ignored. This is the period where you work, without doing any actual work. There are a lot of formalities (payoneer account setup etc.) which the more experienced ones are exempted from.&lt;/p&gt;
+
+&lt;p&gt;The Community Bonding period is a vital part of the GSoC experience and is intended to get students ready to start contributing to their organization full time in May. Remember, you will not receive $500 just for writing a good proposal. You must be active in the Community Bonding period to earn the initial $500 and remain in the program. &lt;img class=&quot;emoji&quot; title=&quot;:wink:&quot; alt=&quot;:wink:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f609.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since my project was somewhat an extension to a project done last year (by my mentor) it was decided that setting that up would be a good ice breaker.&lt;/p&gt;
+
+&lt;h2 id=&quot;division-of-labour&quot;&gt;Division of labour&lt;/h2&gt;
+
+&lt;p&gt;After the community bonding period was over the flow of work was decided. Two different flows were proposed (each of which led to a toolbox as you might see in the other posts on this blog):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Development - Standalone Scilab Machine Learning Toolbox&lt;/li&gt;
+  &lt;li&gt;Experimentation - Jupyter integration for python libs availability within Scilab &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were played with later on which lead to a more polished definition then.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-links&quot;&gt;Some links&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://summerofcode.withgoogle.com/projects/#4959724454281216&quot;&gt;GSoC project page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://drive.google.com/open?id=1gVU5xOP6KLgbwiSmOhJVShB97PLuhkHQ&quot;&gt;Link to proposal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;Authors:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal&quot; target=&quot;_blank&quot;&gt;Soumitra Agarwal&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:neckbeard:&quot; alt=&quot;:neckbeard:&quot; src=&quot;https://assets.github.com/images/icons/emoji/neckbeard.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>Sat, 21 Jul 2018 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/articles/2018-07/An-introduction(First)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/2018-07/An-introduction(First)</guid>
+        
+        
+        <category>introduction</category>
         
       </item>
     
