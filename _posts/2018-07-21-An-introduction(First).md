@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 	Welcome to the jungle
-excerpt: "<b> Introduction : </b> Coming towards the second half of the `Google Summer of Code` period, an experimentation setup was ..."
+excerpt: "<b> Introduction : </b> Organisations already announced, people already done with their proposals, while I was here ..."
 categories: [Introduction]
 comments: true
 ---
