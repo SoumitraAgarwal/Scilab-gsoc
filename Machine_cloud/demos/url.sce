@@ -2,7 +2,7 @@
 
 url 				= 'https://raw.githubusercontent.com/franklinwillemen/Machine_Learning/master/Regression/Simple_Linear_Regression/Salary_Data.csv'
 
-algorithm 				= 'linear_regression'
+algorithm 				= 'kmeans_clustering'
 preprocessing_script 	= 'preprocessing.py'
 parameters 				= ''
 

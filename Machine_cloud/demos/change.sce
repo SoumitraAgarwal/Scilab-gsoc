@@ -3,8 +3,7 @@
 username 				= 'soumitra'
 oldpassword				= 'abc123'
 ip 						= '35.237.174.190'
-newpassword 			= 'abc123'
-
+newpassword 			= input('Enter new password : ', string)
 chdir('..')
 toolbox_basedir 		= pwd()
 chdir('tests')

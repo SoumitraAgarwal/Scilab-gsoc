@@ -1,1 +1,2 @@
-echo '35.237.174.190' >> password
+rm password
+echo 'abc123' >> password

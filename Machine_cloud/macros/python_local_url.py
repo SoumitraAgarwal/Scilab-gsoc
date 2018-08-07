@@ -14,7 +14,7 @@ subprocess.Popen(["nohup", "python", base + "/macros/init.py"])
 
 status = os.popen('echo $(ssh -i ~/.ssh/id_rsa ' + user + '@' + ip + ' cat password)').readlines()
 status = status[-1].rstrip("\r\n")
-print(status)
+
 if(status == passw):
 	os.popen('scp -i ~/.ssh/id_rsa ' + prep + ' ' + user + '@' + ip + ':~/Working/preprocessing.py')
 

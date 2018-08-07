@@ -1,6 +1,6 @@
 getd('../macros')
 scripts = dir('../demos')
-numfiles = size(scripts.name)(1)
+numfiles = size(scripts.name)(1) - 1
 disp(scripts)
 for i = 1:numfiles
 	script = scripts.name(i);
