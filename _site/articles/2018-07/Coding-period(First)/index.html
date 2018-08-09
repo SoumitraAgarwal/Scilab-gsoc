@@ -105,7 +105,7 @@
       <span class="read-time" title="Estimated read time">
   
   
-    6 mins read
+    7 mins read
   
 </span>
 
@@ -170,6 +170,37 @@ well. This was integrated with both our original functionality and the url based
     <p>A loader script was written which transfers the required server files to a new user on the cloud.</p>
   </li>
 </ul>
+
+<h2 id="architecture">Architecture</h2>
+
+<p><img src="http://0.0.0.0:4000/img/ML_Cloud.jpg" /></p>
+
+<h2 id="preparation">Preparation</h2>
+
+<p>There are some dependencies required for this toolbox. </p>
+
+<h4 id="pimsscipython">PIMS/scipython</h4>
+
+<p>If you are using scilab &lt; 6.0.0 then you can use PIMS as your python wrapper. To install PIMS run <code>atomsGui()</code> in your scilab console and navigate to <code>Scilab development</code> category.</p>
+
+<p><img src="http://0.0.0.0:4000/img/PIMS.png" /></p>
+
+<p>Just click on install and check the autoload checkbox and you won’t have to worry about it. For scilab &gt;= 6.0.0 users, similarly install scipython.</p>
+
+<h4 id="python-3">Python 3</h4>
+
+<p>You can go through the required package <a href="https://www.python.org/downloads/">here</a> and then proceed with the installation instructions as stated there.</p>
+
+<h4 id="other-preprocesses">Other preprocesses</h4>
+
+<p>In order to start up with the toolbox you would need to follow the following steps as well :</p>
+
+<ol>
+  <li>Install anaconda on the server (or alternatively numpy, pandas and scikit-learn)</li>
+  <li>Add the public key to the metadata of the server</li>
+  <li>Run the loader function (as stated above)</li>
+  <li>Run the register function </li>
+</ol>
 
 <h2 id="usage">Usage</h2>
 

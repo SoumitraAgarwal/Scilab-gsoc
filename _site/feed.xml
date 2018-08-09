@@ -5,8 +5,8 @@
     <description>The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Aug 2018 16:08:55 +0530</pubDate>
-    <lastBuildDate>Thu, 09 Aug 2018 16:08:55 +0530</lastBuildDate>
+    <pubDate>Thu, 09 Aug 2018 17:33:12 +0530</pubDate>
+    <lastBuildDate>Thu, 09 Aug 2018 17:33:12 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -255,6 +255,37 @@ well. This was integrated with both our original functionality and the url based
     &lt;p&gt;A loader script was written which transfers the required server files to a new user on the cloud.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/ML_Cloud.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
+
+&lt;p&gt;There are some dependencies required for this toolbox. &lt;/p&gt;
+
+&lt;h4 id=&quot;pimsscipython&quot;&gt;PIMS/scipython&lt;/h4&gt;
+
+&lt;p&gt;If you are using scilab &amp;lt; 6.0.0 then you can use PIMS as your python wrapper. To install PIMS run &lt;code&gt;atomsGui()&lt;/code&gt; in your scilab console and navigate to &lt;code&gt;Scilab development&lt;/code&gt; category.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/PIMS.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just click on install and check the autoload checkbox and you won’t have to worry about it. For scilab &amp;gt;= 6.0.0 users, similarly install scipython.&lt;/p&gt;
+
+&lt;h4 id=&quot;python-3&quot;&gt;Python 3&lt;/h4&gt;
+
+&lt;p&gt;You can go through the required package &lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;here&lt;/a&gt; and then proceed with the installation instructions as stated there.&lt;/p&gt;
+
+&lt;h4 id=&quot;other-preprocesses&quot;&gt;Other preprocesses&lt;/h4&gt;
+
+&lt;p&gt;In order to start up with the toolbox you would need to follow the following steps as well :&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install anaconda on the server (or alternatively numpy, pandas and scikit-learn)&lt;/li&gt;
+  &lt;li&gt;Add the public key to the metadata of the server&lt;/li&gt;
+  &lt;li&gt;Run the loader function (as stated above)&lt;/li&gt;
+  &lt;li&gt;Run the register function &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 

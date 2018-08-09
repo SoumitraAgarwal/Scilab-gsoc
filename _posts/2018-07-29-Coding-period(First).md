@@ -49,6 +49,38 @@ well. This was integrated with both our original functionality and the url based
 
 * A loader script was written which transfers the required server files to a new user on the cloud.
 
+## Architecture
+
+<img src = '{{ site.url }}/img/ML_Cloud.jpg'>
+
+## Preparation
+
+There are some dependencies required for this toolbox. 
+
+#### PIMS/scipython
+
+If you are using scilab < 6.0.0 then you can use PIMS as your python wrapper. To install PIMS run `atomsGui()` in your scilab console and navigate to `Scilab development` category.
+
+
+<img src = '{{ site.url }}/img/PIMS.png'>
+
+Just click on install and check the autoload checkbox and you won't have to worry about it. For scilab >= 6.0.0 users, similarly install scipython.
+
+
+#### Python 3
+
+You can go through the required package [here](https://www.python.org/downloads/) and then proceed with the installation instructions as stated there.
+
+#### Other preprocesses
+
+In order to start up with the toolbox you would need to follow the following steps as well :
+
+1. Install anaconda on the server (or alternatively numpy, pandas and scikit-learn)
+2. Add the public key to the metadata of the server
+3. Run the loader function (as stated above)
+4. Run the register function 
+
+
 ## Usage
 
 This section explains the usage of the setup and how one can check whether it is working fine or not. There are around 6 different flows that one can make use of.
