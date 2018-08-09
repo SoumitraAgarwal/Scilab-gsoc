@@ -5,9 +5,108 @@
     <description>The blog of work updates of the Google summer of code project '18 (and beyond) Scilab</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Aug 2018 16:36:16 +0530</pubDate>
-    <lastBuildDate>Mon, 06 Aug 2018 16:36:16 +0530</lastBuildDate>
+    <pubDate>Thu, 09 Aug 2018 16:04:27 +0530</pubDate>
+    <lastBuildDate>Thu, 09 Aug 2018 16:04:27 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Too bad it is over</title>
+        <description>&lt;h2 id=&quot;the-great-journey&quot;&gt;The great journey&lt;/h2&gt;
+
+&lt;p&gt;I never expected this to end so fast. The GSoC journey was exquisite. I was part of a GSoC program earlier and to be honest, this was much more different than like it. If you are mildly interested in making a contribution and are enthusiastic to a certain extent, the open source community for Scilab recieves you with open arms and a box of chocolates.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/980x.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There were ups and downs, decisions taken but we never stopped.&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;Here is a list of important resources that future contributors might find useful (apart from ones on this blog in earlier posts)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mailinglists.scilab.org/&quot;&gt;Mailing lists&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wiki.scilab.org/Machine%20Learning%20Toolbox%20in%20Scilab&quot;&gt;Project wiki for a project done in 2017&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://scilab.io/category/machine-learning/&quot;&gt;Scilab machine learning tutorials&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://scikit-learn.org/stable/documentation.html&quot;&gt;Scikit learn documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/&quot;&gt;Analytics Vidhya easy to understand ML algos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For any other assistance related to contribution pertaining to this project or otherwise drop me a mail at &lt;code&gt;agarwalsoumitra1504[at]gmail[dot]com&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;Authors:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal&quot; target=&quot;_blank&quot;&gt;Soumitra Agarwal&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:neckbeard:&quot; alt=&quot;:neckbeard:&quot; src=&quot;https://assets.github.com/images/icons/emoji/neckbeard.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>Thu, 09 Aug 2018 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/articles/2018-08/Endnote(First)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/2018-08/Endnote(First)</guid>
+        
+        
+        <category>spin off</category>
+        
+      </item>
+    
+      <item>
+        <title>Scilab v/s Python</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/wf.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-great-debate&quot;&gt;The great debate&lt;/h2&gt;
+
+&lt;p&gt;There has been and would continue to be a healthy tiff between users of python and Scilab. While a lot of active development goes into the production of python as we see it now it is something on the lines of &lt;i&gt; too many cooks make the broth difficult to eat &lt;/i&gt;. Although Scilab is still very nebular in the space of machine learning, I beleive that my project could be the ignition that it needed to conquer those territories. &lt;/p&gt;
+
+&lt;p&gt;SCILAB is an easy to use and productive computing environment for engineers and scientists and is dedicated to mathematical and technical computing.&lt;/p&gt;
+
+&lt;p&gt;In contrast, Python is a general-purpose programming language requiring add-on libraries for performing even basic mathematics.&lt;/p&gt;
+
+&lt;p&gt;Engineers and scientists need a programming language that expresses matrix and array mathematics directly instead of through generalized programming constructs. Matrix math in Python requires function calls, not natural operators, and you must keep track of the differences between scalars, 1-D arrays, and 2-D arrays. Even in the simplest Python code this can be difficult, as the hidden mistake in the following example shows. The same example written in the SCILAB language shows that SCILAB is the more natural way to express computational mathematics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/Python.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As we can see in the code above row is a 1-d array. It looks like a row vector, but it doesn’t have enough dimensionality to say if it is a row or a column – it is just a 1-d array. Since there is no second dimension, the transpose in the third line has no effect. If we run the code similarly on Scilab, we see it is much more intuitive, and thus less prone to errors.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/Scilab.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ultimately, linear algebra in SCIALB looks like linear algebra in a textbook. The same is true for data analytics, signal and image processing, control design, and other applications.&lt;/p&gt;
+
+&lt;p&gt;There are quartos and folios of python codes that are difficult to understand like&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://0.0.0.0:4000/img/Python2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For a complete list visit efforts by &lt;a href=&quot;https://github.com/satwikkansal/wtfpython&quot;&gt;satwikkansal&lt;/a&gt;. In conclusion we can make out the following points :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Scilab is math/computation and matrix-oriented language whereas python is a general-purpose language and numeric arrays and data types not part of the core language.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Beginners write math as they would on paper for Scilab whereas python users must become programmers before they can be productive.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Saying that python is never usable for data science would be a very unfair statement since the amount of code invested into easing the process out is immense. Though it depends on each user, Scilab is much well suited for a person not looking at the exact construct of a program but the domain.&lt;/p&gt;
+
+&lt;h3 id=&quot;authors&quot;&gt;Authors:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SoumitraAgarwal&quot; target=&quot;_blank&quot;&gt;Soumitra Agarwal&lt;/a&gt; &lt;img class=&quot;emoji&quot; title=&quot;:neckbeard:&quot; alt=&quot;:neckbeard:&quot; src=&quot;https://assets.github.com/images/icons/emoji/neckbeard.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;thank-you-for-reading&quot;&gt;Thank you for reading&lt;/h6&gt;
+
+</description>
+        <pubDate>Thu, 09 Aug 2018 00:00:00 +0530</pubDate>
+        <link>http://0.0.0.0:4000/articles/2018-08/Analysis(First)</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/2018-08/Analysis(First)</guid>
+        
+        
+        <category>spin off</category>
+        
+      </item>
     
       <item>
         <title>The machine learning standalone toolbox</title>
