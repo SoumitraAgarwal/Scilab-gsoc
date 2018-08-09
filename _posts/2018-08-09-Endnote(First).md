@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 	Too bad it is over
-excerpt: "<b> The great journey : </b> The first half of the project was an effort to understand the functioning of Scilab and contributing something ..."
+excerpt: "<b> The great journey : </b> I never expected this to end so fast. The GSoC journey was exquisite. I was part of a GSoC program earlier and to be honest ..."
 categories: [Spin off]
 comments: true
 ---
